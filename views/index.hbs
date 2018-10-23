@@ -1,0 +1,156 @@
+{{#if slider}}
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      {{#if slider.slider1img}}
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+      {{/if}}
+      {{#if slider.slider2img}}
+        <li data-target="#demo" data-slide-to="1"></li>
+      {{/if}}
+      {{#if slider.slider3img}}
+        <li data-target="#demo" data-slide-to="2"></li>
+      {{/if}}
+    </ul>
+
+    <!-- Slideshow -->
+
+    <div class="carousel-inner imee-blue">
+      {{#if slider.slider1img}}
+        <div class="carousel-item active" style="height: 500px;">
+          <!-- <div class="w-100 h-100 position-absolute"></div> -->
+          <img class="img-fluid w-100" src="/files/uploads/images/{{slider.slider1img}}" alt="{{slider.slider1title}}" style="max-width:100%;height:auto;min-height:500px;object-fit:cover;">
+          <div class="carousel-caption">
+            <h3>{{slider.slider1title}}</h3>
+            <p>{{slider.slider1text}}</p>
+            {{#if slider.slider1prog}}
+              <a href="/programs/{{slider.slider1prog}}" class="btn imee-btn">Περισσότερα</a>
+            {{/if}}
+          </div>
+
+        </div>
+      {{/if}}
+      {{#if slider.slider2img}}
+        <div class="carousel-item" style="height: 500px;">
+          <img class="img-fluid w-100" src="/files/uploads/images/{{slider.slider2img}}" alt="{{slider.slider2title}}" style="max-width:100%;height:auto;min-height:500px;object-fit:cover;">
+          <div class="carousel-caption">
+            <h3>{{slider.slider2title}}</h3>
+            <p>{{slider.slider2text}}</p>
+            {{#if slider.slider2prog}}
+              <a href="/programs/{{slider.slider2prog}}" class="btn imee-btn">Περισσότερα</a>
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+      {{#if slider.slider3img}}
+        <div class="carousel-item" style="height: 500px;">
+          <img class="img-fluid w-100" src="/files/uploads/images/{{slider.slider3img}}" alt="{{slider.slider3title}}" style="max-width:100%;height:auto;min-height:500px;object-fit:cover;">
+          <div class="carousel-caption">
+            <h3>{{slider.slider3title}}</h3>
+            <p>{{slider.slider3text}}</p>
+            {{#if slider.slider3prog}}
+              <a href="/programs/{{slider.slider3prog}}" class="btn imee-btn">Περισσότερα</a>
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+{{/if}}
+
+<!-- Programs -->
+<div class="row mx-0 ">
+  <div class="col-12 p-0">
+    <div class="row mx-0 py-3 imee-light-grey">
+      <div class="col-12">
+        <div class="imee-container text-center">
+          <h3 class="imee-text-black py-0">Δημοφιλή Προγράμματα</h3>
+        </div>
+      </div>
+    </div>
+    <div class="imee-container">
+      <div class="row mx-0  py-3 ">
+
+        {{#if featured}}
+          {{#each featured}}
+            <div class="col-12 col-sm-6 col-md-6  {{#ifCond @index '==' 3}}col-lg-8 {{else}}col-lg-4 {{/ifCond}} mb-3">
+              <div class="card imee-card shadow-sm border" style="width: auto;">
+                <img class="card-img-top img-fluid" src="/files/uploads/images/{{image}}" alt="{{title}}">
+                <div class="card-body">
+                  <h6 class="card-title imee-text-blue">{{title}}</h6>
+                  <p class="card-text fr-view">{{{text}}}</p>
+                </div>
+                <div class="card-footer">
+                  <a href="/programs/{{id}}" class="btn imee-btn-grey">Περισσότερα</a>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+        {{/if}}
+
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- News -->
+<div class="row mx-0 ">
+  <div class="col-12 p-0">
+    <div class="row mx-0 py-3 imee-light-grey">
+      <div class="col-12">
+        <div class="imee-container text-center">
+          <h3 class="imee-text-black py-0">Τελευταία Νέα</h3>
+        </div>
+      </div>
+    </div>
+    <div class="imee-container">
+      <div class="row mx-0  py-3 ">
+
+        {{#if news}}
+          {{#each news}}
+            <div class="col-12 py-3">
+              <div class="card imee-news-card shadow-sm rounded-right border">
+                <div class="card-body mb-3">
+                  <div class="card-title border-bottom">
+                    <div class="row mx-0">
+                      <div class="col-12 col-md-8 px-0 text-left">
+                        <h6 class="imee-text-blue">{{title}}</h6>
+                      </div>
+                      <div class="col-12 col-md-4 px-0 text-right">
+                        <span class="imee-text-red">Τελευταία ενημέρωση: {{dateFormat update_time}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-text fr-view pt-2">
+                    {{{text}}}
+                  </div>
+                </div>
+                <div class="card-footer border-top bg-light text-right">
+                  <a href="/news#announcement-{{id}}">Περισσότερα</a>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+        <!-- No news found -->
+        {{/if}}
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

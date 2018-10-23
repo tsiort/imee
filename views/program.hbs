@@ -1,0 +1,94 @@
+<div class="row mx-0 imee-red shadow-sm border-bottom">
+  <div class="col-12 py-3 ">
+    <div class="imee-container text-center ">
+      <h6 class="text-white m-0 imee-section-header" style="font-size: 0.9rem !important">ΠΡΟΓΡΑΜΜΑΤΑ</h6>
+    </div>
+  </div>
+</div>
+
+<div class="row mx-0 my-4">
+  <div class="col-12 p-0 ">
+    <div class="imee-container rounded border shadow-sm ">
+
+      {{#if program}}
+
+        <div class="row mx-0">
+          <div class="col-12 p-0">
+            <img src="/files/uploads/images/{{program.image}}" alt="{{program.image}}" style="height:400px;width:100%;object-fit:cover;">
+          </div>
+        </div>
+        <div class="row mx-0  py-3">
+          <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 p-2 imee-text-black ">
+            <div class="row mx-0">
+              <div class="col-12 py-2 my-1">
+                <span class="imee-prog-title">{{program.title}}</span>
+              </div>
+              <div class="col-12 py-2 border-bottom">
+                <span class="imee-prog-subtitle">Υπότιτλος για Σεμινάρια Πληροφορικής</span>
+              </div>
+              <div class="col-12 fr-view mt-4">
+                {{{program.text}}}
+              </div>
+
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2 bg-light rounder">
+            <div class="row mx-0 imee-text-black">
+              <div class="col-12 p-2 my-1 border-bottom">
+                <span class="font-weight-bold float-left">Έναρξη</span>
+                <span class="font-weight-normal float-right">14/09/2018</span>
+              </div>
+              <div class="col-12 p-2 my-1 border-bottom">
+                <span class="font-weight-bold float-left">Λήξη</span>
+                <span class="font-weight-normal float-right">24/10/2018</span>
+              </div>
+              <div class="col-12 p-2 my-1 border-bottom">
+                <span class="font-weight-bold float-left">Ώρες</span>
+                <span class="font-weight-normal float-right">35</span>
+              </div>
+              <div class="col-12 p-2 my-1 border-bottom">
+                <span class="font-weight-bold float-left">Κόστος</span>
+                <span class="font-weight-normal float-right">200 &euro;</span>
+              </div>
+              <div class="col-12 p-2 my-1 border-bottom">
+                <span class="font-weight-bold float-left">Τοποθεσία</span>
+                <span class="font-weight-normal float-right">Εράτυρας 3, Αθήνα</span>
+              </div>
+              <div class="col-12 p-2 my-1">
+                <span class="font-weight-bold float-left">Εισηγητής</span>
+                <span class="font-weight-normal float-right">Πέτρος Μοσχολιός</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 border-top px-4 py-2">
+            {{#if program.attachments}}
+              <div class="row mx-0">
+                <div class="col-12 my-1">
+                  <h5>Αρχεία</h5>
+                </div>
+                {{#each program.attachments}}
+                <div class="col-12 my-1">
+                  <a href="/files/uploads/docs/{{this}}" class="imee-text-heavy-grey" download>
+                    <i class="fas fa fa-file-download"></i>
+                    <span style="font-size: 0.9rem">{{this}}</span>
+                  </a>
+                </div>
+
+                {{else}}
+                <div class="col-12 my-1">
+                  <a href="/files/uploads/docs/{{program.attachments}}" class="imee-text-heavy-grey" download>
+                    <i class="fas fa fa-file-download"></i>
+                    <span style="font-size: 0.9rem">{{program.attachments}}</span>
+                  </a>
+                </div>
+                {{/each}}
+              </div>
+            {{/if}}
+          </div>
+        </div>
+
+      {{/if}}
+    </div>
+  </div>
+</div>

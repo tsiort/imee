@@ -1,0 +1,254 @@
+@import "../../node_modules/bootstrap/scss/bootstrap"
+
+$black: #00060c
+$blue: #011f79
+$light-grey: #f2f2f2
+$grey: #dbdbdb
+$heavy-grey: #6f6f6f
+$heavier-grey: #666666
+$red: #be2a27
+
+
+.imee-black
+  background: $black !important
+.imee-red
+  background: $red !important
+.imee-blue
+  background: $blue !important
+.imee-grey
+  background: $grey !important
+.imee-light-grey
+  background: $light-grey !important
+.imee-heavier-grey
+  background: $heavier-grey !important
+.imee-text-black
+  color: $black !important
+.imee-text-red
+  color: $red !important
+.imee-text-blue
+  color: $blue !important
+.imee-text-grey
+  color: $grey !important
+.imee-text-heavy-grey
+  color: $heavy-grey !important
+.imee-text-light-grey
+  color: $light-grey !important
+
+
+
+.imee-section-header
+  letter-spacing: 2px
+  font-weight: bold
+
+
+
+.imee-btn
+  color: $black
+  background: $light-grey
+  padding: 0.6rem 1.7rem
+  font-size: 0.9rem
+  line-height: 1.5
+  border-radius: 0.4rem
+  &:hover
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+    color: $light-grey
+    background: $black
+.imee-btn-grey
+    color: white
+    background: $heavier-grey
+    padding: 0.6rem 1.7rem
+    font-size: 0.9rem
+    line-height: 1.5
+    border-radius: 0.4rem
+    &:hover
+      color: white
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+
+
+.imee-nav-link
+  transition: background-color .5s ease
+  &::before
+  	content: ''
+  	display: block
+  	margin: auto
+  	height: 3px
+  	width: 0px
+  	background: transparent
+    border-top: 2px solid transparent
+  	transition: width .5s ease, background-color .5s ease
+  &:hover::before
+    width: 100%
+    background-color: white
+    border-top: 2px solid $blue
+  &.active
+    background-color: white !important
+  &.active::before
+    width: 100%
+    border-top: 2px solid $blue
+  &:hover
+    background-color: white
+
+
+.imee-pill
+  color: $heavy-grey !important
+  background-color: white !important
+  // border-radius: 0px !important
+  transition: background-color .5s ease
+  border: 1px solid #dee2e6 !important
+  padding: 0.3rem 0.9rem !important
+  &.active
+    color: black !important
+    font-weight: 700
+    // background-color: $light-grey !important
+    background-color: white !important
+    border: none !important
+    text-decoration: underline
+    // font-weight: 700 !important
+  &:hover
+    // text-decoration: underline
+    // color: black !important
+    // font-weight: 700
+    // background-color: $light-grey !important
+    background-color: white !important
+    // border: none !important
+    text-decoration: underline
+
+.imee-card
+  height: 100%
+  > img
+    max-height: 250px
+    height: 250px
+    object-fit: cover
+  > .card-body
+    height: 130px
+    overflow: hidden
+    font-size: 0.9rem
+  > .card-footer
+    border: 0
+    background-color: transparent
+
+
+.imee-news-card
+  border-left: 3px solid $red !important
+  // border-top-left-radius: 0
+  // border-bottom-left-radius: 0
+  height: 100%
+  > .card-body
+    height: 170px
+    overflow: hidden
+    font-size: 0.9rem
+  > .card-footer
+    border: 0
+    background-color: transparent
+
+body
+  height: 100%
+  text-rendering: optimizelegibility !important
+  font-family: "Roboto Condensed", sans-serif !important
+  // padding: 50px
+  // font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+p
+  margin: 0
+
+// .nav-tabs
+//     display: none
+//
+//
+// @include media-breakpoint-up(md)
+//   .nav-tabs
+//     display: flex
+//   .card
+//     border: none
+//   .card
+//     .card-header
+//       display: none
+//     .collapse
+//       display: block
+//
+//
+//
+// @include media-breakpoint-down(md)
+//     .tab-pane
+//         display: block !important
+//         opacity: 1
+//
+
+#myTab
+    display: none
+
+
+@include media-breakpoint-up(md)
+  #myTab
+    display: flex
+  .card
+    border: none
+  .card
+    .card-header
+      display: none
+    .collapse
+      display: block
+
+
+
+@include media-breakpoint-down(md)
+    .imee-tab-pane
+        display: block !important
+        opacity: 1
+    #myTab
+        display: none
+
+.imee-resp-font
+  font-size: 0.9rem
+
+@include media-breakpoint-down(sm)
+    .imee-resp-font
+      font-size: 0.8rem !important
+
+
+
+
+
+.red
+  border: 1px solid red
+
+.imee-container
+  width: 100%
+  padding-right: -15px
+  padding-left: -15px
+  margin-right: auto
+  margin-left: auto
+  max-width: 1200px
+  // border: 1px solid red
+
+// .imee-nav-link:after
+//   display: block
+//   content: ''
+//   border-bottom: solid 2px $blue
+//   transform: scaleX(0)
+//   transition: transform .1s ease-in-out
+//
+// .imee-nav-link:hover:after
+//   border-bottom: 2px solid $blue
+//   transform: scaleX(0.5)
+
+#imee-mega-nav
+  display: none
+  -webkit-transition: opacity .5s
+  transition: opacity .5s
+  &:hover
+    display: block
+
+#imee-prog:hover ~ #imee-mega-nav
+  display: block
+
+.imee-prog-img
+  transition: box-shadow 0.3s ease-in-out
+  &:hover
+    cursor: pointer
+    box-shadow: 4px 4px 10px grey
+
+.imee-prog-title
+  font-size: 1.3rem
+
+.imee-prog-subtitle
+  font-size: 1rem
