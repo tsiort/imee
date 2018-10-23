@@ -122,6 +122,7 @@ router.get('/programs/:id', function(req, res, next) {
     result.forEach(function(item) {
       item.attachments = JSON.parse(item.attachments);
       item.categories = JSON.parse(item.categories);
+      item.gallery    = JSON.parse(item.gallery);
     })
     program = result[0];
     res.render('program', {

@@ -155,7 +155,7 @@ router.get('/:id/edit', authenticationMiddleware(), function(req, res, next) {
             return;
           }
           category = categories;
-          console.log(result[0]);
+
           res.render('admin/edit', {
             layout: 'admin-wysiwyg',
             title: 'Επεξεργασία Προγράμματος',

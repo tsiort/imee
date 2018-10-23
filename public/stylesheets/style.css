@@ -6504,4 +6504,7 @@ p {
 .imee-prog-subtitle {
   font-size: 1rem; }
 
+#imee-img-viewer {
+  cursor: pointer; }
+
 /*# sourceMappingURL=style.css.map */
