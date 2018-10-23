@@ -137,7 +137,7 @@
         <select class="custom-select custom-select-sm" size="5" id="programAttachments" name="programAttachments" {{#if docs}} multiple {{else}} disabled {{/if}}>
           {{#if docs}}
             {{#each docs}}
-              <option value="{{name}}"  {{#if../result.attachments}}{{#ifIn this.name ../result.attachments}} selected {{/ifIn}}{{/if}}>{{name}}</option>
+              <option value="{{name}}"  {{#if ../result.attachments}}{{#ifIn this.name ../result.attachments}} selected {{/ifIn}}{{/if}}>{{name}}</option>
             {{/each}}
           {{else}}
             <option value="Δεν βρέθηκαν αρχεία">Δεν βρέθηκαν αρχεία</option>
@@ -146,7 +146,27 @@
         <input type="text" class="form-control form-control-sm mt-2" id="programAttachmentsPreview" name="programAttachmentsPreview" aria-describedby="textHelp" placeholder="Συνημμένα Αρχεία" readonly>
       </div>
 
+      <div class="media text-muted pt-1">
+        <p class="media-body pb-1 mb-0 small lh-125 border-bottom border-gray">
+          <strong class="d-block text-gray-dark">Gallery</strong>
+        </p>
+      </div>
 
+      <div class="form-group my-4 pl-3">
+        <label for="programGalleryImages" class="m-0"><small class="text-primary" style="font-weight:600;">Εικόνες για Gallery</small></label>
+        <small class="float-right text-secondary">Για πολλαπλή επιλογή πατήστε <kbd>ctrl</kbd></small>
+        <!-- <input type="text" class="form-control form-control-sm" id="programCategories" name="programCategories" aria-describedby="textHelp" placeholder="Όνομα Προγράμματος"> -->
+
+        <select class="custom-select custom-select-sm" size="10" id="programGalleryImages" name="programGalleryImages" {{#if images}} multiple {{else}} disabled {{/if}} >
+          {{#if images}}
+            {{#each images}}
+              <option value="{{name}}" {{#if ../result.gallery}}{{#ifIn this.name ../result.gallery}} selected {{/ifIn}}{{/if}}>{{name}}</option>
+            {{/each}}
+          {{else}}
+            <option value="Δεν βρέθηκαν εικόνες">Δεν βρέθηκαν εικόνες</option>
+          {{/if}}
+        </select>
+      </div>
 
       <div class="d-flex justify-content-between border-top pt-3 mt-3">
         <button type="submit" class="btn btn-primary btn-sm">Αποθήκευση</button>

@@ -94,7 +94,7 @@ router.post('/new', authenticationMiddleware(), function(req, res, next) {
   var progImg = req.body.programImage;
   var progMainPage = req.body.programMainPage;
   var progAttachments = req.body.programAttachments;
-  var progGallery;
+  var progGallery = req.body.programGalleryImages;
 
   if (req.body.programMainPage == 'on')
     progMainPage = 1;
@@ -155,7 +155,7 @@ router.get('/:id/edit', authenticationMiddleware(), function(req, res, next) {
             return;
           }
           category = categories;
-
+          console.log(result[0]);
           res.render('admin/edit', {
             layout: 'admin-wysiwyg',
             title: 'Επεξεργασία Προγράμματος',
@@ -180,7 +180,6 @@ router.get('/:id/edit', authenticationMiddleware(), function(req, res, next) {
 /* Edit Program POST */
 router.post('/:id/edit', authenticationMiddleware(), function(req, res, next) {
 
-
   // Get params
   var id = req.params.id;
   var progTitle = req.body.programTitle;
@@ -189,7 +188,7 @@ router.post('/:id/edit', authenticationMiddleware(), function(req, res, next) {
   var progImg = req.body.programImage;
   var progMainPage = req.body.programMainPage;
   var progAttachments = req.body.programAttachments;
-  var progGallery;
+  var progGallery = req.body.programGalleryImages;
 
   if (req.body.programMainPage == 'on')
     progMainPage = 1;
@@ -201,7 +200,6 @@ router.post('/:id/edit', authenticationMiddleware(), function(req, res, next) {
     if (err) {
       res.json(err);
     } else {
-      console.log(result);
       req.flash('success_msg', 'Το πρόγραμμα ' + progTitle + ' ενημερώθηκε με επιτυχία')
       res.redirect('/admin/program');
     }
@@ -214,7 +212,6 @@ router.get('/:id/delete', authenticationMiddleware(), function(req, res, next) {
     if (err) {
       res.json(err);
     } else {
-      console.log(result);
       res.render('admin/delete', {
         layout: 'admin',
         title: 'Διαγραφή Προγράμματος',
