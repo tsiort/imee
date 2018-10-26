@@ -6327,6 +6327,9 @@ a.text-dark:hover, a.text-dark:focus {
 .imee-heavier-grey {
   background: #666666 !important; }
 
+.imee-grey-blue {
+  background: #767588 !important; }
+
 .imee-text-black {
   color: #00060c !important; }
 
@@ -6345,6 +6348,9 @@ a.text-dark:hover, a.text-dark:focus {
 .imee-text-light-grey {
   color: #f2f2f2 !important; }
 
+.imee-text-grey-blue {
+  color: #767588 !important; }
+
 .imee-section-header {
   letter-spacing: 2px;
   font-weight: bold; }
@@ -6355,22 +6361,23 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 0.6rem 1.7rem;
   font-size: 0.9rem;
   line-height: 1.5;
-  border-radius: 0.4rem; }
+  border-radius: 2rem; }
   .imee-btn:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     color: #f2f2f2;
     background: #00060c; }
 
 .imee-btn-grey {
-  color: white;
-  background: #666666;
+  color: #767588;
+  background: white;
+  border: 1px solid #dee2e6;
   padding: 0.6rem 1.7rem;
   font-size: 0.9rem;
   line-height: 1.5;
-  border-radius: 0.4rem; }
+  border-radius: 2rem; }
   .imee-btn-grey:hover {
-    color: white;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+    color: #767588;
+    box-shadow: 3px 6px 16px -8px rgba(118, 117, 136, 0.5); }
 
 .imee-nav-link {
   transition: background-color .5s ease; }

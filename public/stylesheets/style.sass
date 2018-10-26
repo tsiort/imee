@@ -7,6 +7,8 @@ $grey: #dbdbdb
 $heavy-grey: #6f6f6f
 $heavier-grey: #666666
 $red: #be2a27
+$grey-blue: #767588
+
 
 
 .imee-black
@@ -21,6 +23,8 @@ $red: #be2a27
   background: $light-grey !important
 .imee-heavier-grey
   background: $heavier-grey !important
+.imee-grey-blue
+  background: $grey-blue !important
 .imee-text-black
   color: $black !important
 .imee-text-red
@@ -33,6 +37,8 @@ $red: #be2a27
   color: $heavy-grey !important
 .imee-text-light-grey
   color: $light-grey !important
+.imee-text-grey-blue
+  color: $grey-blue !important
 
 
 
@@ -48,21 +54,26 @@ $red: #be2a27
   padding: 0.6rem 1.7rem
   font-size: 0.9rem
   line-height: 1.5
-  border-radius: 0.4rem
+  // border-radius: 0.4rem
+  border-radius: 2rem
   &:hover
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
     color: $light-grey
     background: $black
 .imee-btn-grey
-    color: white
-    background: $heavier-grey
+    color: $grey-blue
+    background: white
+    border: 1px solid #dee2e6
     padding: 0.6rem 1.7rem
     font-size: 0.9rem
     line-height: 1.5
-    border-radius: 0.4rem
+    border-radius: 2rem
     &:hover
-      color: white
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+      color: $grey-blue
+      // box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+      box-shadow: 3px 6px 16px -8px rgba(118, 117, 136, 0.5)
+
+
 
 
 .imee-nav-link

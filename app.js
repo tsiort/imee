@@ -22,6 +22,7 @@ var mysql = require('./db');
 var User = require('./models/user.js');
 
 var indexRouter = require('./routes/index');
+var foreasRouter = require('./routes/foreas');
 var adminRouter = require('./routes/admin');
 var categRouter = require('./routes/category');
 var progrRouter = require('./routes/program');
@@ -127,6 +128,7 @@ app.use(function(req, res, next) {
 
 
 app.use('/', indexRouter);
+app.use('/foreas', foreasRouter);
 app.use('/admin', adminRouter);
 app.use('/admin/category', categRouter);
 app.use('/admin/program', progrRouter);
