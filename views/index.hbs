@@ -17,7 +17,7 @@
 
     <!-- Slideshow -->
 
-    <div class="carousel-inner imee-blue">
+    <div class="carousel-inner">
       {{#if slider.slider1img}}
         <div class="carousel-item active" style="height: 500px;">
           <!-- <div class="w-100 h-100 position-absolute"></div> -->
@@ -80,10 +80,9 @@
     </div>
     <div class="imee-container">
       <div class="row mx-0  py-3 ">
-
         {{#if featured}}
           {{#each featured}}
-            <div class="col-12 col-sm-6 col-md-6  {{#ifCond @index '==' 3}}col-lg-8 {{else}}col-lg-4 {{/ifCond}} mb-3">
+            <div class="col-12 col-sm-6 col-md-6  col-lg-{{getLayout ../featured.length @index}} mb-3">
               <div class="card imee-card shadow-sm border" style="width: auto;">
                 <img class="card-img-top img-fluid" src="/files/uploads/images/{{image}}" alt="{{title}}">
                 <div class="card-body">

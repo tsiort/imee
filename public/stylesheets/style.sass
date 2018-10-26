@@ -74,7 +74,22 @@ $grey-blue: #767588
       box-shadow: 3px 6px 16px -8px rgba(118, 117, 136, 0.5)
 
 
-
+.imee-scroller
+  position: relative
+  z-index: 2
+  overflow-y: hidden
+  .nav
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+    padding-bottom: 1rem
+    // margin-top: -1px
+    overflow-x: auto
+    // color: rgba(255, 255, 255, 0.75)
+    text-align: center
+    white-space: nowrap
+    -webkit-overflow-scrolling: touch
 
 .imee-nav-link
   transition: background-color .5s ease
@@ -101,28 +116,33 @@ $grey-blue: #767588
 
 
 .imee-pill
-  color: $heavy-grey !important
+  color: $grey-blue !important
   background-color: white !important
   // border-radius: 0px !important
   transition: background-color .5s ease
-  border: 1px solid #dee2e6 !important
-  padding: 0.3rem 0.9rem !important
+  // border: 1px solid #dee2e6 !important
+  padding: 0.0rem 0.9rem !important
+  // padding: 0 !important
+  font-size: 0.95rem
   &.active
-    color: black !important
+    // color: black !important
+    // color: $grey-blue
+    color: $blue !important
     font-weight: 700
     // background-color: $light-grey !important
     background-color: white !important
     border: none !important
-    text-decoration: underline
+    // text-decoration: underline
     // font-weight: 700 !important
   &:hover
+    color: $blue !important
     // text-decoration: underline
     // color: black !important
     // font-weight: 700
     // background-color: $light-grey !important
     background-color: white !important
     // border: none !important
-    text-decoration: underline
+    // text-decoration: underline
 
 .imee-card
   height: 100%
@@ -161,28 +181,6 @@ body
 p
   margin: 0
 
-// .nav-tabs
-//     display: none
-//
-//
-// @include media-breakpoint-up(md)
-//   .nav-tabs
-//     display: flex
-//   .card
-//     border: none
-//   .card
-//     .card-header
-//       display: none
-//     .collapse
-//       display: block
-//
-//
-//
-// @include media-breakpoint-down(md)
-//     .tab-pane
-//         display: block !important
-//         opacity: 1
-//
 
 #myTab
     display: none

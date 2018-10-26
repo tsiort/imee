@@ -6379,6 +6379,21 @@ a.text-dark:hover, a.text-dark:focus {
     color: #767588;
     box-shadow: 3px 6px 16px -8px rgba(118, 117, 136, 0.5); }
 
+.imee-scroller {
+  position: relative;
+  z-index: 2;
+  overflow-y: hidden; }
+  .imee-scroller .nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; }
+
 .imee-nav-link {
   transition: background-color .5s ease; }
   .imee-nav-link::before {
@@ -6403,20 +6418,19 @@ a.text-dark:hover, a.text-dark:focus {
     background-color: white; }
 
 .imee-pill {
-  color: #6f6f6f !important;
+  color: #767588 !important;
   background-color: white !important;
   transition: background-color .5s ease;
-  border: 1px solid #dee2e6 !important;
-  padding: 0.3rem 0.9rem !important; }
+  padding: 0.0rem 0.9rem !important;
+  font-size: 0.95rem; }
   .imee-pill.active {
-    color: black !important;
+    color: #011f79 !important;
     font-weight: 700;
     background-color: white !important;
-    border: none !important;
-    text-decoration: underline; }
+    border: none !important; }
   .imee-pill:hover {
-    background-color: white !important;
-    text-decoration: underline; }
+    color: #011f79 !important;
+    background-color: white !important; }
 
 .imee-card {
   height: 100%; }
