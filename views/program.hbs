@@ -7,7 +7,7 @@
 </div>
 
 <div class="row mx-0 my-4">
-  <div class="col-12 p-0 ">
+  <div class="col-12">
     <div class="imee-container rounded border shadow-sm ">
 
       {{#if program}}
@@ -17,94 +17,111 @@
             <img src="/files/uploads/images/{{program.image}}" alt="{{program.image}}" style="height:400px;width:100%;object-fit:cover;">
           </div>
         </div>
-        <div class="row mx-0  py-3">
+        <div class="row mx-0">
+
+          <!-- Left Column  -->
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 p-2 imee-text-black ">
             <div class="row mx-0">
-              <div class="col-12 py-2 my-1">
+              <div class="col-12 py-2 my-1 border-bottom">
                 <span class="imee-prog-title">{{program.title}}</span>
-              </div>
-              <div class="col-12 py-2 border-bottom">
-                <span class="imee-prog-subtitle">Υπότιτλος για Σεμινάρια Πληροφορικής</span>
+                <!-- <h3 class="py-0 m-0 imee-section-header imee-text-grey-blue">{{program.title}}</h3> -->
               </div>
               <div class="col-12 fr-view mt-4">
                 {{{program.text}}}
               </div>
 
+
             </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2 bg-light rounder">
-            <div class="row mx-0 imee-text-black">
+
+          <!-- Right Column  -->
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2 imee-light-grey rounder">
+            <div class="row mx-0 imee-text-grey-blue">
               <div class="col-12 p-2 my-1 border-bottom">
-                <span class="font-weight-bold float-left">Έναρξη</span>
-                <span class="font-weight-normal float-right">14/09/2018</span>
+                <span class="imee-prog-title">Πληροφορίες</span>
+                <!-- <h3 class="py-0 m-0 imee-section-header imee-text-grey-blue">Πληροφορίες</h3> -->
               </div>
-              <div class="col-12 p-2 my-1 border-bottom">
-                <span class="font-weight-bold float-left">Λήξη</span>
-                <span class="font-weight-normal float-right">24/10/2018</span>
-              </div>
-              <div class="col-12 p-2 my-1 border-bottom">
-                <span class="font-weight-bold float-left">Ώρες</span>
-                <span class="font-weight-normal float-right">35</span>
-              </div>
-              <div class="col-12 p-2 my-1 border-bottom">
-                <span class="font-weight-bold float-left">Κόστος</span>
-                <span class="font-weight-normal float-right">200 &euro;</span>
-              </div>
-              <div class="col-12 p-2 my-1 border-bottom">
-                <span class="font-weight-bold float-left">Τοποθεσία</span>
-                <span class="font-weight-normal float-right">Εράτυρας 3, Αθήνα</span>
-              </div>
-              <div class="col-12 p-2 my-1">
-                <span class="font-weight-bold float-left">Εισηγητής</span>
-                <span class="font-weight-normal float-right">Πέτρος Μοσχολιός</span>
-              </div>
+              {{#if program.start_date}}
+                <div class="col-12 p-2 my-1 border-bottom">
+                  <span class="font-weight-bold float-left">Έναρξη</span>
+                  <span class="font-weight-normal float-right imee-text-red">{{dateFormat program.start_date}}</span>
+                </div>
+              {{/if}}
+              {{#if program.end_date}}
+                <div class="col-12 p-2 my-1 border-bottom">
+                  <span class="font-weight-bold float-left">Λήξη</span>
+                  <span class="font-weight-normal float-right imee-text-red">{{dateFormat program.end_date}}</span>
+                </div>
+              {{/if}}
+              {{#if program.hours}}
+                <div class="col-12 p-2 my-1 border-bottom">
+                  <span class="font-weight-bold float-left">Ώρες</span>
+                  <span class="font-weight-normal float-right imee-text-red">{{program.hours}}</span>
+                </div>
+              {{/if}}
+              {{#if program.cost}}
+                <div class="col-12 p-2 my-1 border-bottom">
+                  <span class="font-weight-bold float-left">Κόστος</span>
+                  <span class="font-weight-normal float-right imee-text-red">{{program.cost}} &euro;</span>
+                </div>
+              {{/if}}
+              {{#if program.location}}
+                <div class="col-12 p-2 my-1 border-bottom">
+                  <span class="font-weight-bold float-left">Τοποθεσία</span>
+                  <span class="font-weight-normal float-right imee-text-red">{{program.location}}</span>
+                </div>
+              {{/if}}
+              {{#if program.teacher}}
+                <div class="col-12 p-2 my-1">
+                  <span class="font-weight-bold float-left">Εισηγητής</span>
+                  <span class="font-weight-normal float-right imee-text-red">{{program.teacher}}</span>
+                </div>
+              {{/if}}
             </div>
           </div>
+
+        </div>
+
+
+
+
+        <div class="row mx-0 border-top px-2 ">
           <!-- Gallery -->
-          <div class="col-12 border-top px-4 py-2">
-            {{#if program.gallery}}
-              <div class="row mx-0">
-                <div class="col-12 my-1">
-                  <h5>Gallery</h5>
-                </div>
-                <div id="imee-img-viewer">
-                  {{#each program.gallery}}
-                    <img src="/files/uploads/images/{{this}}" alt="{{this}}" class="img-thumbnail " style="height:100px;width:100px;object-fit:cover;">
-                  {{else}}
-                    <img src="/files/uploads/images/{{this}}" alt="{{this}}" class="img-thumbnail " style="height:100px;width:100px;object-fit:cover;">
-                  {{/each}}
-                </div>
-              </div>
-            {{/if}}
-          </div>
-
-          <!-- Attachments  -->
-          <div class="col-12 border-top px-4 py-2">
-            {{#if program.attachments}}
-              <div class="row mx-0">
-                <div class="col-12 my-1">
-                  <h5>Αρχεία</h5>
-                </div>
-                {{#each program.attachments}}
-                  <div class="col-12 my-1">
-                    <a href="/files/uploads/docs/{{this}}" class="imee-text-heavy-grey" download>
-                    <i class="fas fa fa-file-download"></i>
-                    <span style="font-size: 0.9rem">{{this}}</span>
-                  </a>
-                  </div>
-
-            {{else}}
-              <div class="col-12 my-1">
-                <a href="/files/uploads/docs/{{program.attachments}}" class="imee-text-heavy-grey" download>
-                    <i class="fas fa fa-file-download"></i>
-                    <span style="font-size: 0.9rem">{{program.attachments}}</span>
-                  </a>
-              </div>
+          {{#if program.gallery}}
+            <div class="col-12 py-3">
+              <h5 class="imee-text-grey-blue my-3">Σχετικές Εικόνες</h5>
+              <div id="imee-img-viewer">
+                {{#each program.gallery}}
+                  <img src="/files/uploads/images/{{this}}" alt="{{this}}" class="img-thumbnail " style="height:100px;width:100px;object-fit:cover;">
+                {{else}}
+                  <img src="/files/uploads/images/{{this}}" alt="{{this}}" class="img-thumbnail " style="height:100px;width:100px;object-fit:cover;">
                 {{/each}}
               </div>
-            {{/if}}
-          </div>
+            </div>
+          {{/if}}
+          <!-- Attachments  -->
+          {{#if program.attachments}}
+            <div class="col-12 py-3">
+              <h5 class="imee-text-grey-blue my-3">Αρχεία</h5>
+              {{#each program.attachments}}
+                <div class="col-12 p-0 mb-3">
+                  <a href="/files/uploads/docs/{{this}}" class="imee-text-grey-blue" download>
+                    <i class="fas fa-lg fa-file-download"></i>
+                    <span>{{this}}</span>
+                  </a>
+                </div>
+              {{else}}
+                <div class="col-12 p-0 mb-3">
+                  <a href="/files/uploads/docs/{{program.attachments}}" class="imee-text-grey-blue" download>
+                    <i class="fas fa-lg fa-file-download"></i>
+                    <span>{{program.attachments}}</span>
+                  </a>
+                </div>
+              {{/each}}
+            </div>
+          {{/if}}
         </div>
+
 
       {{/if}}
     </div>
@@ -115,6 +132,25 @@
   <script src="/libs//viewerjs/dist/viewer.js"></script>
   <script type="text/javascript">
     // View a list of images
-    var viewer = new Viewer(document.getElementById('imee-img-viewer'));
+    var viewer = new Viewer(document.getElementById('imee-img-viewer'), {
+      title: false,
+      toolbar: {
+        zoomIn: 4,
+        zoomOut: 4,
+        oneToOne: 4,
+        reset: 4,
+        prev: 1,
+        play: {
+          show: 4,
+          size: 'large',
+        },
+        next: 1,
+        rotateLeft: false,
+        rotateRight: false,
+        flipHorizontal: false,
+        flipVertical: false,
+      },
+      movable: false,
+    });
   </script>
 {{/if}}

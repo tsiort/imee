@@ -146,6 +146,57 @@
         <input type="text" class="form-control form-control-sm mt-2" id="programAttachmentsPreview" name="programAttachmentsPreview" aria-describedby="textHelp" placeholder="Συνημμένα Αρχεία" readonly>
       </div>
 
+
+      <!--Course data  -->
+      <div class="media text-muted pt-1">
+        <p class="media-body pb-1 mb-0 small lh-125 border-bottom border-gray">
+          <strong class="d-block text-gray-dark">Πληροφορίες Μαθήματος</strong>
+        </p>
+      </div>
+
+      <div class="form-group mb-5 mt-3 pl-3">
+        <div class="row h-100">
+          <div class="col-12 col-md-6">
+            <label for="programStartDate" class="m-0"><small class="text-primary" style="font-weight:600;">Ημερομηνία Έναρξης</small></label>
+            <input type="date" class="form-control form-control-sm" id="programStartDate" name="programStartDate" aria-describedby="dateHelp" placeholder="Ημερομηνία Έναρξης" {{#if result.start_date}}value="{{dateFormat_en result.start_date}}"{{/if}}>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="programEndDate" class="m-0"><small class="text-primary" style="font-weight:600;">Ημερομηνία Λήξης</small></label>
+            <input type="date" class="form-control form-control-sm" id="programEndDate" name="programEndDate" aria-describedby="dateHelp" placeholder="Ημερομηνία Λήξης" {{#if result.start_date}}value="{{dateFormat_en result.end_date}}"{{/if}}>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-5 mt-3 pl-3">
+        <div class="row h-100">
+          <div class="col-12 col-md-6">
+            <label for="programHours" class="m-0"><small class="text-primary" style="font-weight:600;">Ώρες Εκπαίδευσης</small></label>
+            <small class="float-right text-secondary">Δύο δεκαδικά ψηφία χωρισμένα με <kbd>.</kbd></small>
+            <input type="number" step="0.01" class="form-control form-control-sm" id="programHours" name="programHours" aria-describedby="numberHelp" placeholder="00.00" {{#if result.hours}}value="{{result.hours}}"{{/if}}>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="programCost" class="m-0"><small class="text-primary" style="font-weight:600;">Κόστος Εκπαίδευσης</small></label>
+            <small class="float-right text-secondary">Δύο δεκαδικά ψηφία χωρισμένα με <kbd>.</kbd></small>
+            <input type="number" step="0.01" class="form-control form-control-sm" id="programCost" name="programCost" aria-describedby="numberHelp" placeholder="00.00"  {{#if result.cost}}value="{{result.cost}}"{{/if}}>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group mb-5 mt-3 pl-3">
+        <div class="row h-100">
+          <div class="col-12 col-md-6">
+            <label for="programLocation" class="m-0"><small class="text-primary" style="font-weight:600;">Τοποθεσία</small></label>
+            <input type="text" class="form-control form-control-sm" id="programLocation" name="programLocation" aria-describedby="textHelp" placeholder="Τοποθεσία" {{#if result.location}}value="{{result.location}}"{{/if}}>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="programTeacher" class="m-0"><small class="text-primary" style="font-weight:600;">Εισηγητής</small></label>
+            <input type="text" class="form-control form-control-sm" id="programTeacher" name="programTeacher" aria-describedby="textHelp" placeholder="Εισηγητής" {{#if result.teacher}}value="{{result.teacher}}"{{/if}}>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
       <div class="media text-muted pt-1">
         <p class="media-body pb-1 mb-0 small lh-125 border-bottom border-gray">
           <strong class="d-block text-gray-dark">Gallery</strong>

@@ -36,7 +36,10 @@ var register = function(Handlebars) {
         return options.inverse(this);
     },
     dateFormat: function(date) {
-      return moment(date).format('DD-MM-YYYY');
+      return moment(date).format('DD/MM/YYYY');
+    },
+    dateFormat_en: function(date) {
+      return moment(date).format('YYYY-MM-DD');
     },
     getLayout: function(length, index) {
       // Make sure last line is always field

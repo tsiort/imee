@@ -95,6 +95,13 @@ router.post('/new', authenticationMiddleware(), function(req, res, next) {
   var progMainPage = req.body.programMainPage;
   var progAttachments = req.body.programAttachments;
   var progGallery = req.body.programGalleryImages;
+  var progStartDate = req.body.programStartDate;
+  var progEndDate = req.body.programEndDate;
+  var progHours = req.body.programHours;
+  var progCost = req.body.programCost;
+  var progLocation = req.body.programLocation;
+  var progTeacher = req.body.programTeacher;
+
 
   if (req.body.programMainPage == 'on')
     progMainPage = 1;
@@ -102,7 +109,7 @@ router.post('/new', authenticationMiddleware(), function(req, res, next) {
     progMainPage = 0;
 
 
-  Program.new(progTitle, progMainPage, progText, progCategories, progAttachments, progImg, progGallery, function(err, result) {
+  Program.new(progTitle, progMainPage, progText, progCategories, progAttachments, progImg, progGallery, progStartDate, progEndDate, progHours, progCost, progLocation, progTeacher, function(err, result) {
     if (err) {
       res.json(err);
     } else {
@@ -111,6 +118,7 @@ router.post('/new', authenticationMiddleware(), function(req, res, next) {
     }
   });
 });
+
 /* Edit Program GET */
 router.get('/:id/edit', authenticationMiddleware(), function(req, res, next) {
   var id = req.params.id;
@@ -148,7 +156,6 @@ router.get('/:id/edit', authenticationMiddleware(), function(req, res, next) {
           res.json(err);
           return;
         }
-
         Category.getAll(function(err, categories) {
           if (err) {
             res.json(err);
@@ -189,6 +196,12 @@ router.post('/:id/edit', authenticationMiddleware(), function(req, res, next) {
   var progMainPage = req.body.programMainPage;
   var progAttachments = req.body.programAttachments;
   var progGallery = req.body.programGalleryImages;
+  var progStartDate = req.body.programStartDate;
+  var progEndDate = req.body.programEndDate;
+  var progHours = req.body.programHours;
+  var progCost = req.body.programCost;
+  var progLocation = req.body.programLocation;
+  var progTeacher = req.body.programTeacher;
 
   if (req.body.programMainPage == 'on')
     progMainPage = 1;
@@ -196,7 +209,7 @@ router.post('/:id/edit', authenticationMiddleware(), function(req, res, next) {
     progMainPage = 0;
 
 
-  Program.update(id, progTitle, progMainPage, progText, progCategories, progAttachments, progImg, progGallery, function(err, result) {
+  Program.update(id, progTitle, progMainPage, progText, progCategories, progAttachments, progImg, progGallery, progStartDate, progEndDate, progHours, progCost, progLocation, progTeacher, function(err, result) {
     if (err) {
       res.json(err);
     } else {
