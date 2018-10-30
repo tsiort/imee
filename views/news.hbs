@@ -10,32 +10,30 @@
   <div class="col-12 p-0">
 
     <div class="imee-container">
-      <div class="row mx-0 py-5">
+      <div class="row mx-0 py-4">
         {{#if news}}
           {{#each news}}
-            <div class="col-12 py-3" id="announcement-{{id}}">
+            <div class="col-12 py-4" id="announcement-{{id}}">
               <div class="card imee-news-card shadow-sm rounded-right border">
-                <div class="card-body mb-3">
+                <div class="card-body text-justify">
                   <div class="card-title border-bottom">
                     <div class="row mx-0">
                       <div class="col-12 col-md-8 px-0 text-left">
-                        <h6 class="imee-text-blue">{{title}}</h6>
+                        <h6 class="imee-text-blue imee-fw-600">{{title}}</h6>
                       </div>
                       <div class="col-12 col-md-4 px-0 text-right">
                         <span class="imee-text-red">Τελευταία ενημέρωση: {{dateFormat update_time}}</span>
                       </div>
                     </div>
                   </div>
-                  <div class="card-text fr-view pt-2">
+                  <div class="card-text h-100 fr-view">
                     {{{text}}}
                   </div>
-                </div>
-                <div class="card-footer border-top bg-light">
-                  more
                 </div>
               </div>
             </div>
           {{/each}}
+
         {{else}}
         {{/if}}
 

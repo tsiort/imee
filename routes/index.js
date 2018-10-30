@@ -16,7 +16,8 @@ router.get('/', function(req, res, next) {
 
   var programs = [],
     slider = [],
-    news = [];
+    news = [],
+    category = [];
 
   Slider.get(function(err, result) {
     if (err) {
@@ -37,11 +38,21 @@ router.get('/', function(req, res, next) {
           return;
         }
         news = result;
-        res.render('index', {
-          title: 'Αρχική',
-          slider: slider,
-          featured: programs,
-          news: news
+
+        Category.getAll(function(err, result) {
+          if (err) {
+            res.json(err);
+            return;
+          }
+          category = result;
+
+          res.render('index', {
+            title: 'Αρχική',
+            slider: slider,
+            featured: programs,
+            news: news,
+            category: category
+          });
         });
       });
     });
@@ -122,7 +133,7 @@ router.get('/programs/:id', function(req, res, next) {
     result.forEach(function(item) {
       item.attachments = JSON.parse(item.attachments);
       item.categories = JSON.parse(item.categories);
-      item.gallery    = JSON.parse(item.gallery);
+      item.gallery = JSON.parse(item.gallery);
     })
     program = result[0];
     res.render('program', {

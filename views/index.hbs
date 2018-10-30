@@ -85,9 +85,9 @@
             <div class="col-12 col-sm-6 col-md-6  col-lg-{{getLayout ../featured.length @index}} mb-3">
               <div class="card imee-card shadow-sm border" style="width: auto;">
                 <img class="card-img-top img-fluid" src="/files/uploads/images/{{image}}" alt="{{title}}">
-                <div class="card-body">
-                  <h6 class="card-title imee-text-blue">{{title}}</h6>
-                  <p class="card-text fr-view">{{{text}}}</p>
+                <div class="card-body text-justify">
+                  <h6 class="card-title imee-text-blue imee-fw-600">{{title}}</h6>
+                  <div class="card-text  fr-view">{{{text}}}</div>
                 </div>
                 <div class="card-footer">
                   <a href="/programs/{{id}}" class="btn imee-btn-grey">Περισσότερα</a>
@@ -96,8 +96,11 @@
             </div>
           {{/each}}
         {{else}}
+        <!-- No programs found -->
         {{/if}}
-
+        <div class="col-12 text-center py-3">
+          <a href="/programs" class="btn btn-lg imee-btn-grey">Όλα τα προγράμματα</a>
+        </div>
 
 
       </div>
@@ -122,32 +125,33 @@
           {{#each news}}
             <div class="col-12 py-3">
               <div class="card imee-news-card shadow-sm rounded-right border">
-                <div class="card-body mb-3">
+                <div class="card-body text-justify">
                   <div class="card-title border-bottom">
                     <div class="row mx-0">
                       <div class="col-12 col-md-8 px-0 text-left">
-                        <h6 class="imee-text-blue">{{title}}</h6>
+                        <h6 class="imee-text-blue imee-fw-600">{{title}}</h6>
                       </div>
                       <div class="col-12 col-md-4 px-0 text-right">
                         <span class="imee-text-red">Τελευταία ενημέρωση: {{dateFormat update_time}}</span>
                       </div>
                     </div>
                   </div>
-                  <div class="card-text fr-view pt-2">
+                  <div class="card-text text-justify fr-view">
                     {{{text}}}
                   </div>
                 </div>
                 <div class="card-footer border-top bg-light text-right">
-                  <a href="/news#announcement-{{id}}">Περισσότερα</a>
+                  <a href="/news#announcement-{{id}}" class="imee-text-grey-blue">Περισσότερα</a>
                 </div>
               </div>
             </div>
           {{/each}}
         {{else}}
-        <!-- No news found -->
+          <!-- No news found -->
         {{/if}}
-
-
+        <div class="col-12 text-center py-3">
+          <a href="/news" class="btn btn-lg imee-btn-grey">Όλες οι ανακοινώσεις</a>
+        </div>
 
       </div>
     </div>

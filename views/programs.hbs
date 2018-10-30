@@ -17,9 +17,9 @@
         </li>
         {{#if category}}
           {{#each category}}
-          <li class="nav-item mx-0 my-1">
-            <a class="nav-link imee-pill {{#ifCond ../activecat '==' id}}active{{/ifCond}}" href="/programs/category/{{id}}">{{category}}</a>
-          </li>
+            <li class="nav-item mx-0 my-1">
+              <a class="nav-link imee-pill {{#ifCond ../activecat '==' id}}active{{/ifCond}}" href="/programs/category/{{id}}">{{category}}</a>
+            </li>
           {{/each}}
         {{/if}}
       </ul>
@@ -31,23 +31,17 @@
 
 <div class="row mx-0 ">
   <div class="col-12 p-0">
-    <!-- <div class="row mx-0 py-3 imee-light-grey">
-      <div class="col-12 py-3 ">
-        <div class="imee-container text-center">
-          <h3 class="imee-text-black">Δημοφιλή Προγράμματα</h3>
-        </div>
-      </div>
-    </div> -->
     <div class="imee-container">
       <div class="row mx-0 py-5">
+
         {{#if program}}
           {{#each program}}
-            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-3">
+            <div class="col-12 col-sm-6 col-md-6  col-lg-{{getLayout ../featured.length @index}} mb-3">
               <div class="card imee-card shadow-sm border" style="width: auto;">
                 <img class="card-img-top img-fluid" src="/files/uploads/images/{{image}}" alt="{{title}}">
-                <div class="card-body ">
+                <div class="card-body">
                   <h6 class="card-title imee-text-blue">{{title}}</h6>
-                  <p class="card-text fr-view text-truncate" style="font-size:0.9rem;">{{{text}}}</p>
+                  <div class="card-text text-justify fr-view">{{{text}}}</div>
                 </div>
                 <div class="card-footer">
                   <a href="/programs/{{id}}" class="btn imee-btn-grey">Περισσότερα</a>
