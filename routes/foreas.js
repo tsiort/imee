@@ -34,5 +34,9 @@ router.get('/ekdilo', function(req, res, next) {
     title: 'Ο Φορέας',
   });
 });
-
+router.get('/empiria', function(req, res, next) {
+  res.render('foreas/empiria', {
+    title: 'Ο Φορέας',
+  });
+});
 module.exports = router;

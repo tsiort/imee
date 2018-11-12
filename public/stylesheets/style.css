@@ -6554,4 +6554,11 @@ p {
 .fa-facebook:hover {
   color: #011f79; }
 
+.imee-foreas-card > .imee-foreas-card-tag {
+  font-size: 0.8rem;
+  font-weight: 600; }
+
+.imee-foreas-card > .imee-foreas-card-title {
+  font-weight: 600; }
+
 /*# sourceMappingURL=style.css.map */
