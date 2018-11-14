@@ -9,7 +9,37 @@ var Category = require('../models/category.js');
 var Program = require('../models/program.js');
 var Slider = require('../models/slider.js');
 var News = require('../models/news.js');
+var Meganav = require('../models/meganav.js');
 
+var nav = [];
+var prg = [];
+
+router.get('*', function(req, res, next) {
+  // console.log('got it');
+  Meganav.get(function(err, result) {
+    if (err) {
+      res.json(err);
+      return;
+    }
+    nav = result[0];
+    if( nav.meganav_featured ){
+      Program.get(nav.meganav_featured, function(err, result) {
+        if (err) {
+          res.json(err);
+          return;
+        }
+        prg = result[0];
+        console.log(nav);
+        next();
+      });
+    } else {
+      prog = null;
+      next();
+    }
+
+  });
+
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -51,6 +81,8 @@ router.get('/', function(req, res, next) {
             slider: slider,
             featured: programs,
             news: news,
+            nav: nav,
+            prg: prg,
             category: category
           });
         });
@@ -83,6 +115,8 @@ router.get('/programs', function(req, res, next) {
         type: 'prog',
         category: category,
         program: program,
+        nav: nav,
+        prg: prg,
         activecat: 'all'
       });
     });
@@ -113,6 +147,8 @@ router.get('/programs/category/:id', function(req, res, next) {
         type: 'prog',
         category: category,
         program: program,
+        nav: nav,
+        prg: prg,
         activecat: id
       });
     });
@@ -139,6 +175,8 @@ router.get('/programs/:id', function(req, res, next) {
     res.render('program', {
       title: 'Προγράμματα',
       program: program,
+      nav: nav,
+      prg: prg,
     });
   });
 });
@@ -156,7 +194,9 @@ router.get('/news', function(req, res, next) {
     news = result;
     res.render('news', {
       title: 'Ανακοινώσεις',
-      news: news
+      news: news,
+      nav: nav,
+      prg: prg,
     });
   });
 
@@ -166,6 +206,8 @@ router.get('/news', function(req, res, next) {
 router.get('/contact', function(req, res, next) {
   res.render('contact', {
     title: 'Επικοινωνία',
+    nav: nav,
+    prg: prg,
   });
 });
 

@@ -81,137 +81,138 @@
           <div class="row w-100 " id="imee-mega-nav">
             <div class="col-12 d-none d-lg-block">
               <!-- Mega Nav  -->
-              <div class="row mx-0 position-absolute p-3 border-top-0 shadow bg-white" style="z-index:1000; width:90%; left:5%;">
-                <div class="col-12" style="height:350px;">
-                  <div class="row mx-0 py-4 h-100 justify-content-around">
-                    <div class="col-3 pl-4 border-right ">
-                      <div class="row mx-0">
-                        <div class="col-12 py-3">
-                          <h5 class="imee-text-black font-weight-bold ">
-                            ΣΕΜΙΝΑΡΙΑ
-                          </h5>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              Τεχνικοί Ασφαλείας
-                            </h6>
-                          </a>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              Ασφάλεια Τροφίμων
-                            </h6>
-                          </a>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              Εκπαιδευτές
-                            </h6>
-                          </a>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              Πληροφορικής
-                            </h6>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-3 pl-4 border-right ">
-                      <div class="row mx-0">
-                        <div class="col-12 py-3">
-                          <h5 class="imee-text-black font-weight-bold ">
-                            ΠΡΟΓΡΑΜΜΑΤΑ
-                          </h5>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              Εργαζόμενοι
-                            </h6>
-                          </a>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              Άνεργοι
-                            </h6>
-                          </a>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              Επιχειρήσεις
-                            </h6>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-3 pl-4 border-right ">
-                      <div class="row mx-0">
-                        <div class="col-12 py-3">
-                          <h5 class="imee-text-black font-weight-bold ">
-                            VOUCHERS
-                          </h5>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              18 - 24
-                            </h6>
-                          </a>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              24 - 29
-                            </h6>
-                          </a>
-                        </div>
-                        <div class="col-12 py-1">
-                          <a href="#">
-                            <h6 class="imee-text-black font-weight-normal ">
-                              29 - 64
-                            </h6>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-3 pl-4  ">
-                      <div class="row mx-0">
-                        <div class="col-12">
-                          <h3 class="imee-text-black">
+              {{#if nav}}
+                  <div class="row mx-0 position-absolute p-3 border-top-0 shadow bg-white" style="z-index:1000; width:90%; left:5%;">
+                    <div class="col-12" style="height:350px;">
+                      <div class="row mx-0 py-4 h-100 justify-content-around">
+                        {{#if nav.meganav_title_1}}
+                          <div class="col pl-4 border-right ">
+                            <div class="row mx-0">
+                              <div class="col-12 py-3">
+                                <h5 class="imee-text-black font-weight-bold ">
+                                  {{nav.meganav_title_1}}
+                                </h5>
+                              </div>
+                              {{#if nav.meganav_title_1_1}}
+                                <div class="col-12 py-1">
+                                  <a href="{{#if nav.meganav_title_1_1_prog}}/programs/{{nav.meganav_title_1_1_prog}}{{else}}#{{/if}}">
+                                    <h6 class="imee-text-black font-weight-normal ">
+                                      {{nav.meganav_title_1_1}}
+                                    </h6>
+                                  </a>
+                                </div>
+                              {{/if}}
+                              {{#if nav.meganav_title_1_2}}
+                                <div class="col-12 py-1">
+                                  <a href="{{#if nav.meganav_title_1_2_prog}}/programs/{{nav.meganav_title_1_2_prog}}{{else}}#{{/if}}">
+                                    <h6 class="imee-text-black font-weight-normal ">
+                                      {{nav.meganav_title_1_2}}
+                                    </h6>
+                                  </a>
+                                </div>
+                              {{/if}}
+                              {{#if nav.meganav_title_1_3}}
+                                <div class="col-12 py-1">
+                                  <a href="{{#if nav.meganav_title_1_3_prog}}/programs/{{nav.meganav_title_1_3_prog}}{{else}}#{{/if}}">
+                                    <h6 class="imee-text-black font-weight-normal ">
+                                      {{nav.meganav_title_1_3}}
+                                    </h6>
+                                  </a>
+                                </div>
+                              {{/if}}
+                            </div>
+                          </div>
+                        {{/if}}
+                        {{#if nav.meganav_title_2}}
+                          <div class="col pl-4 border-right ">
+                            <div class="row mx-0">
+                              <div class="col-12 py-3">
+                                <h5 class="imee-text-black font-weight-bold ">
+                                  {{nav.meganav_title_2}}
+                                </h5>
+                              </div>
+                              {{#if nav.meganav_title_2_1}}
+                                <div class="col-12 py-1">
+                                  <a href="{{#if nav.meganav_title_2_1_prog}}/programs/{{nav.meganav_title_2_1_prog}}{{else}}#{{/if}}">
+                                    <h6 class="imee-text-black font-weight-normal ">
+                                      {{nav.meganav_title_2_1}}
+                                    </h6>
+                                  </a>
+                                </div>
+                              {{/if}}
+                              {{#if nav.meganav_title_2_2}}
+                                <div class="col-12 py-1">
+                                  <a href="{{#if nav.meganav_title_2_2_prog}}/programs/{{nav.meganav_title_2_2_prog}}{{else}}#{{/if}}">
+                                    <h6 class="imee-text-black font-weight-normal ">
+                                      {{nav.meganav_title_2_2}}
+                                    </h6>
+                                  </a>
+                                </div>
+                              {{/if}}
+                              {{#if nav.meganav_title_2_3}}
+                                <div class="col-12 py-1">
+                                  <a href="{{#if nav.meganav_title_2_3_prog}}/programs/{{nav.meganav_title_2_3_prog}}{{else}}#{{/if}}">
+                                    <h6 class="imee-text-black font-weight-normal ">
+                                      {{nav.meganav_title_2_3}}
+                                    </h6>
+                                  </a>
+                                </div>
+                              {{/if}}
+                            </div>
+                          </div>
+                        {{/if}}
+                        {{#if prg}}
+                        <div class="col pl-4 ">
+                          <div class="row mx-0">
                             <div class="col-12 py-3">
                               <h5 class="imee-text-black font-weight-bold ">
                                 ΔΗΜΟΦΙΛΕΣ
                               </h5>
                             </div>
-                            <div class="col-12 py-1">
-                              <a href="#">
+                            <div class="col-12 text-center">
+                              <a href="/programs/{{prg.id}}">
                                 <div class="row mx-0 border">
                                   <div class="col-12 p-0">
-                                    <img src="/images/worker.jpg" class="img-thumbnail" alt="Featured">
+                                    <img src="files/uploads/images/{{prg.image}}" class="" alt="{{prg.title}}" style="max-height: 200px;height: 200px; width: 100%;object-fit: cover;">
                                   </div>
-                                  <div class="col-12 imee-light-grey text-center ">
+                                  <div class="col-12 imee-light-grey ">
                                     <h6 class="imee-text-black font-weight-normal ">
-                                      Σεμινάριο Τεχνικών
+                                      {{prg.title}}
                                     </h6>
                                   </div>
                                 </div>
                               </a>
                             </div>
-                          </h3>
+                            <!-- <div class="col-12">
+                              <h3 class="imee-text-black">
+                                <div class="col-12 py-3">
+                                  <h5 class="imee-text-black font-weight-bold ">
+                                    ΔΗΜΟΦΙΛΕΣ
+                                  </h5>
+                                </div>
+                                <div class="col-12 py-1">
+                                  <a href="#">
+                                    <div class="row mx-0 border">
+                                      <div class="col-12 p-0">
+                                        <img src="/images/worker.jpg" class="img-thumbnail" alt="Featured">
+                                      </div>
+                                      <div class="col-12 imee-light-grey text-center ">
+                                        <h6 class="imee-text-black font-weight-normal ">
+                                          Σεμινάριο Τεχνικών
+                                        </h6>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                              </h3>
+                            </div> -->
+                          </div>
                         </div>
+                        {{/if}}
                       </div>
                     </div>
                   </div>
-
-                </div>
-              </div>
+              {{/if}}
               <!-- Mega Nav  -->
             </div>
           </div>
