@@ -1,0 +1,33 @@
+AboutNet Nameservers
+
+ns1.aboutnet.gr (v4:81.4.104.116)
+ns2.aboutnet.gr (v4:37.48.67.238)
+ns3.aboutnet.gr (v4:195.201.90.83)
+ns4.aboutnet.gr (v4:149.210.145.89)
+
+Email List (@imee.gr)
+i.mosxolios
+k.makrigianni
+a.mosxoliou
+i.konstas
+d.pantazi
+k.mosxoliou
+e.pauli
+grammateia
+p.mosxolios
+athina
+xanthi
+thiva
+tripoli
+
+Default password: !Me3@
+
+Outgoing Mail port:
+εξερχόμενα 465
+
+
+Database Settings
+k109316pet_imee
+localhost:3306 (default for MySQL, v10.2.18)
+USER: k1093_imee PASS: aMx?r220
+Allow remote connections from 138.201.141.25

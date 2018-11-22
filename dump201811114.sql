@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `imeedb` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `imeedb`;
+﻿CREATE DATABASE  IF NOT EXISTS `k109316pet_imee` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `k109316pet_imee`;
 -- MySQL dump 10.13  Distrib 8.0.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: imeedb

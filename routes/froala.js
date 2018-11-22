@@ -25,9 +25,9 @@ router.get('/load_images', authenticationMiddleware(), function (req, res) {
 // Authentication based restriction middleware
 function authenticationMiddleware() {
   return (req, res, next) => {
-    // if (req.isAuthenticated()) return next();
-    // res.redirect('/login');
-    return next();
+    if (req.isAuthenticated()) return next();
+    res.redirect('/login');
+    // return next();
   }
 }
 

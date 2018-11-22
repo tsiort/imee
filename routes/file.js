@@ -316,9 +316,9 @@ router.post('/upload', authenticationMiddleware(), function(req, res, next) {
 // Authentication based restriction middleware
 function authenticationMiddleware() {
   return (req, res, next) => {
-    // if (req.isAuthenticated()) return next();
-    // res.redirect('/login');
-    return next();
+    if (req.isAuthenticated()) return next();
+    res.redirect('/login');
+    // return next();
   }
 }
 
