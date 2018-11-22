@@ -29,7 +29,6 @@ router.get('*', function(req, res, next) {
           return;
         }
         prg = result[0];
-        console.log(nav);
         next();
       });
     } else {
