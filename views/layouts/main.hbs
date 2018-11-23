@@ -44,11 +44,11 @@
       </div>
     </div>
     <!-- Logo Row -->
-    <div class="row mx-0 p-3  text-white text-center">
+    <div class="row mx-0 mt-1  text-white text-center">
       <div class="col-12 d-none d-sm-block">
         <div class="imee-container">
           <a href="/">
-            <img src="/images/imee-2.png" class="img-fluid " alt="IME&E" style="height: 70px;width:auto;">
+            <img src="/images/logo-new.png" class="img-fluid " alt="IME&E" style="height: 120px;width:auto;">
           </a>
         </div>
       </div>
@@ -68,112 +68,126 @@
           <div class="col-2 col-sm-3 px-0 text-center text-nowrap imee-nav-link imee-resp-font">
             <a class="nav-link py-3 px-0 imee-text-blue text-truncate" href="/" role="tab" aria-selected="true">ΑΡΧΙΚΗ</a>
           </div>
+          <div class="col-3 col-sm-3 px-0 text-center text-nowrap imee-nav-link imee-resp-font dropdown">
+            <a class="nav-link py-3 px-0 imee-text-blue text-truncate" href="/foreas" role="button">Ο ΦΟΡΕΑΣ</a>
+            <span class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </span>
+            <div class="dropdown-menu w-100 border-top-0 m-0" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="/foreas/">Ιστορικό</a>
+              <a class="dropdown-item" href="/foreas/synerg">Συνεργασίες</a>
+              <a class="dropdown-item" href="/foreas/empiria">Εμπειρια του φορέα</a>
+              <a class="dropdown-item" href="/foreas/ipodomi">Υποδομη</a>
+              <a class="dropdown-item" href="/foreas/drast">Δραστηριότητα</a>
+              <a class="dropdown-item" href="/foreas/org">Οργάνωση & Υπηρεσίες</a>
+              <a class="dropdown-item" href="/foreas/ekdilo">Αίθουσα εκδηλώσεων</a>
+            </div>
+          </div>
+
+
+
           <div class="col-4 col-sm-3 px-0 text-center text-nowrap imee-nav-link imee-resp-font" id="imee-prog">
             <a class="nav-link py-3 px-0 imee-text-blue text-truncate" href="/programs">ΠΡΟΓΡΑΜΜΑΤΑ</a>
           </div>
           <div class="col-3 col-sm-3 px-0 text-center text-nowrap imee-nav-link imee-resp-font">
             <a class="nav-link py-3 px-0 imee-text-blue text-truncate" href="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</a>
           </div>
-          <div class="col-3 col-sm-3 px-0 text-center text-nowrap imee-nav-link imee-resp-font">
-            <a class="nav-link py-3 px-0 imee-text-blue text-truncate" href="/foreas">Ο ΦΟΡΕΑΣ</a>
-          </div>
           <div class="w-100"></div>
           <div class="row w-100 " id="imee-mega-nav">
-            <div class="col-12 d-none d-lg-block">
+            <div class="col-12 c d-lg-block">
               <!-- Mega Nav  -->
               {{#if nav}}
-                  <div class="row mx-0 position-absolute p-3 border-top-0 shadow bg-white" style="z-index:1000; width:90%; left:5%;">
-                    <div class="col-12" style="height:350px;">
-                      <div class="row mx-0 py-4 h-100 justify-content-around">
-                        {{#if nav.meganav_title_1}}
-                          <div class="col pl-4 border-right ">
-                            <div class="row mx-0">
-                              <div class="col-12 py-3">
-                                <h5 class="imee-text-black font-weight-bold ">
-                                  {{nav.meganav_title_1}}
-                                </h5>
-                              </div>
-                              {{#if nav.meganav_title_1_1}}
-                                <div class="col-12 py-1">
-                                  <a href="{{#if nav.meganav_title_1_1_prog}}/programs/{{nav.meganav_title_1_1_prog}}{{else}}#{{/if}}">
-                                    <h6 class="imee-text-black font-weight-normal ">
-                                      {{nav.meganav_title_1_1}}
-                                    </h6>
-                                  </a>
-                                </div>
-                              {{/if}}
-                              {{#if nav.meganav_title_1_2}}
-                                <div class="col-12 py-1">
-                                  <a href="{{#if nav.meganav_title_1_2_prog}}/programs/{{nav.meganav_title_1_2_prog}}{{else}}#{{/if}}">
-                                    <h6 class="imee-text-black font-weight-normal ">
-                                      {{nav.meganav_title_1_2}}
-                                    </h6>
-                                  </a>
-                                </div>
-                              {{/if}}
-                              {{#if nav.meganav_title_1_3}}
-                                <div class="col-12 py-1">
-                                  <a href="{{#if nav.meganav_title_1_3_prog}}/programs/{{nav.meganav_title_1_3_prog}}{{else}}#{{/if}}">
-                                    <h6 class="imee-text-black font-weight-normal ">
-                                      {{nav.meganav_title_1_3}}
-                                    </h6>
-                                  </a>
-                                </div>
-                              {{/if}}
+                <div class="row mx-0 position-absolute  border-top-0 shadow bg-white" style="z-index:1000; width:90%; left:5%;">
+                  <div class="col-12" style="height:350px;">
+                    <div class="row mx-0 py-3 h-100 justify-content-around">
+                      {{#if nav.meganav_title_1}}
+                        <div class="col pl-4 border-right ">
+                          <div class="row mx-0">
+                            <div class="col-12 py-3">
+                              <h6 class="imee-text-black font-weight-bold ">
+                                {{nav.meganav_title_1}}
+                              </h6>
                             </div>
-                          </div>
-                        {{/if}}
-                        {{#if nav.meganav_title_2}}
-                          <div class="col pl-4 border-right ">
-                            <div class="row mx-0">
-                              <div class="col-12 py-3">
-                                <h5 class="imee-text-black font-weight-bold ">
-                                  {{nav.meganav_title_2}}
-                                </h5>
+                            {{#if nav.meganav_title_1_1}}
+                              <div class="col-12 py-1">
+                                <a href="{{#if nav.meganav_title_1_1_prog}}/programs/{{nav.meganav_title_1_1_prog}}{{else}}#{{/if}}">
+                                  <h6 class="imee-text-black font-weight-normal ">
+                                    {{nav.meganav_title_1_1}}
+                                  </h6>
+                                </a>
                               </div>
-                              {{#if nav.meganav_title_2_1}}
-                                <div class="col-12 py-1">
-                                  <a href="{{#if nav.meganav_title_2_1_prog}}/programs/{{nav.meganav_title_2_1_prog}}{{else}}#{{/if}}">
-                                    <h6 class="imee-text-black font-weight-normal ">
-                                      {{nav.meganav_title_2_1}}
-                                    </h6>
-                                  </a>
-                                </div>
-                              {{/if}}
-                              {{#if nav.meganav_title_2_2}}
-                                <div class="col-12 py-1">
-                                  <a href="{{#if nav.meganav_title_2_2_prog}}/programs/{{nav.meganav_title_2_2_prog}}{{else}}#{{/if}}">
-                                    <h6 class="imee-text-black font-weight-normal ">
-                                      {{nav.meganav_title_2_2}}
-                                    </h6>
-                                  </a>
-                                </div>
-                              {{/if}}
-                              {{#if nav.meganav_title_2_3}}
-                                <div class="col-12 py-1">
-                                  <a href="{{#if nav.meganav_title_2_3_prog}}/programs/{{nav.meganav_title_2_3_prog}}{{else}}#{{/if}}">
-                                    <h6 class="imee-text-black font-weight-normal ">
-                                      {{nav.meganav_title_2_3}}
-                                    </h6>
-                                  </a>
-                                </div>
-                              {{/if}}
-                            </div>
+                            {{/if}}
+                            {{#if nav.meganav_title_1_2}}
+                              <div class="col-12 py-1">
+                                <a href="{{#if nav.meganav_title_1_2_prog}}/programs/{{nav.meganav_title_1_2_prog}}{{else}}#{{/if}}">
+                                  <h6 class="imee-text-black font-weight-normal ">
+                                    {{nav.meganav_title_1_2}}
+                                  </h6>
+                                </a>
+                              </div>
+                            {{/if}}
+                            {{#if nav.meganav_title_1_3}}
+                              <div class="col-12 py-1">
+                                <a href="{{#if nav.meganav_title_1_3_prog}}/programs/{{nav.meganav_title_1_3_prog}}{{else}}#{{/if}}">
+                                  <h6 class="imee-text-black font-weight-normal ">
+                                    {{nav.meganav_title_1_3}}
+                                  </h6>
+                                </a>
+                              </div>
+                            {{/if}}
                           </div>
-                        {{/if}}
-                        {{#if prg}}
+                        </div>
+                      {{/if}}
+                      {{#if nav.meganav_title_2}}
+                        <div class="col pl-4 border-right ">
+                          <div class="row mx-0">
+                            <div class="col-12 py-3">
+                              <h6 class="imee-text-black font-weight-bold ">
+                                {{nav.meganav_title_2}}
+                              </h6>
+                            </div>
+                            {{#if nav.meganav_title_2_1}}
+                              <div class="col-12 py-1">
+                                <a href="{{#if nav.meganav_title_2_1_prog}}/programs/{{nav.meganav_title_2_1_prog}}{{else}}#{{/if}}">
+                                  <h6 class="imee-text-black font-weight-normal ">
+                                    {{nav.meganav_title_2_1}}
+                                  </h6>
+                                </a>
+                              </div>
+                            {{/if}}
+                            {{#if nav.meganav_title_2_2}}
+                              <div class="col-12 py-1">
+                                <a href="{{#if nav.meganav_title_2_2_prog}}/programs/{{nav.meganav_title_2_2_prog}}{{else}}#{{/if}}">
+                                  <h6 class="imee-text-black font-weight-normal ">
+                                    {{nav.meganav_title_2_2}}
+                                  </h6>
+                                </a>
+                              </div>
+                            {{/if}}
+                            {{#if nav.meganav_title_2_3}}
+                              <div class="col-12 py-1">
+                                <a href="{{#if nav.meganav_title_2_3_prog}}/programs/{{nav.meganav_title_2_3_prog}}{{else}}#{{/if}}">
+                                  <h6 class="imee-text-black font-weight-normal ">
+                                    {{nav.meganav_title_2_3}}
+                                  </h6>
+                                </a>
+                              </div>
+                            {{/if}}
+                          </div>
+                        </div>
+                      {{/if}}
+                      {{#if prg}}
                         <div class="col pl-4 ">
                           <div class="row mx-0">
                             <div class="col-12 py-3">
-                              <h5 class="imee-text-black font-weight-bold ">
+                              <!-- <h5 class="imee-text-black font-weight-bold ">
                                 ΔΗΜΟΦΙΛΕΣ
-                              </h5>
+                              </h5> -->
                             </div>
                             <div class="col-12 text-center">
                               <a href="/programs/{{prg.id}}">
                                 <div class="row mx-0 border">
                                   <div class="col-12 p-0">
-                                    <img src="files/uploads/images/{{prg.image}}" class="" alt="{{prg.title}}" style="max-height: 200px;height: 200px; width: 100%;object-fit: cover;">
+                                    <img src="/files/uploads/images/{{prg.image}}" class="" alt="{{prg.title}}" style="max-height: 200px;height: 200px; width: 100%;object-fit: cover;">
                                   </div>
                                   <div class="col-12 imee-light-grey ">
                                     <h6 class="imee-text-black font-weight-normal ">
@@ -208,10 +222,10 @@
                             </div> -->
                           </div>
                         </div>
-                        {{/if}}
-                      </div>
+                      {{/if}}
                     </div>
                   </div>
+                </div>
               {{/if}}
               <!-- Mega Nav  -->
             </div>
@@ -259,7 +273,9 @@
         <div class="col-12 col-md-4">
           <div class="row mx-0">
             <div class="col-12 py-2 text-center">
+              <a class="" href="/foreas">
               <h6 class="text-light" style="font-weight:700">Ο ΦΟΡΕΑΣ</h6>
+              </a>
             </div>
             <div class="col-12 my-2">
               <div class="py-2">
@@ -290,7 +306,9 @@
         <div class="col-12 col-md-4 pr-0">
           <div class="row mx-0">
             <div class="col-12 py-2 text-center">
-              <h6 class="text-light" style="font-weight:700">ΕΠΙΚΟΙΝΩΝΙΑ</h6>
+              <a class="" href="/contact">
+                <h6 class="text-light" style="font-weight:700">ΕΠΙΚΟΙΝΩΝΙΑ</h6>
+              </a>
             </div>
             <div class="col-12 my-2">
               Ερατύρας 3, <br>Αθήνα, 10439 <br>Σταθμος Λαρίσης <br>+30 210 8259660 <br>

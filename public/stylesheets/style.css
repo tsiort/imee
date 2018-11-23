@@ -4,6 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -6309,6 +6310,11 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+body {
+  height: 100%;
+  text-rendering: optimizelegibility !important;
+  font-family: 'Noto Sans', sans-serif; }
+
 .imee-black {
   background: #00060c !important; }
 
@@ -6354,9 +6360,24 @@ a.text-dark:hover, a.text-dark:focus {
 .imee-text-grey-blue {
   color: #767588 !important; }
 
+.dropdown:hover > .dropdown-menu {
+  display: block; }
+
+.dropdown > .dropdown-toggle:active {
+  pointer-events: none; }
+
+.dropdown-menu {
+  border-radius: 0; }
+
+.dropdown-toggle::after {
+  content: none; }
+
 .imee-section-header {
   letter-spacing: 2px;
   font-weight: bold; }
+
+.dropdown-item {
+  padding: 0.7rem 1.5rem; }
 
 .imee-btn {
   color: #00060c;
@@ -6472,11 +6493,6 @@ a.text-dark:hover, a.text-dark:focus {
     font-size: 0.9rem;
     border: 0;
     background-color: transparent; }
-
-body {
-  height: 100%;
-  text-rendering: optimizelegibility !important;
-  font-family: "Roboto Condensed", sans-serif !important; }
 
 p {
   margin: 0; }

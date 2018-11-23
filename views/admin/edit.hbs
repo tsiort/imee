@@ -308,7 +308,7 @@
           <select class="custom-select custom-select-sm" size="5" id="expCat" name="expCat" {{#if categories}} multiple {{else}} disabled {{/if}} required>
             {{#if categories}}
               {{#each categories}}
-                <option value="{{id}}"{{#if result.categories}}{{#ifIn this.id result.categories}} selected {{/ifIn}}{{/if}}>{{name}}</option>
+                <option value="{{id}}" {{#if ../result.categories}} {{#ifIn this.id ../result.categories}} selected {{/ifIn}} {{/if}}>{{name}}</option>
               {{/each}}
             {{else}}
               <option value="Δεν βρέθηκαν εικόνες">Δεν βρέθηκαν κατηγορίες</option>

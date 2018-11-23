@@ -402,9 +402,9 @@ router.get('/exp-file/:id/edit', authenticationMiddleware(), function(req, res, 
       return;
     }
 
-    result.forEach(function(item) {
-      item.categories = JSON.parse(item.categories);
-    });
+    // result.forEach(function(item) {
+    //   item.categories = JSON.parse(item.categories);
+    // });
 
     res.render('admin/edit', {
       layout: 'admin-wysiwyg',

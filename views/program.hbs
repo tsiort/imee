@@ -60,10 +60,12 @@
                 </div>
               {{/if}}
               {{#if program.cost}}
+              {{#ifCond program.cost "!=" "0" }}
                 <div class="col-12 p-2 my-1 border-bottom">
                   <span class="font-weight-bold float-left">Κόστος</span>
                   <span class="font-weight-normal float-right imee-text-red">{{program.cost}} &euro;</span>
                 </div>
+                {{/ifCond}}
               {{/if}}
               {{#if program.location}}
                 <div class="col-12 p-2 my-1 border-bottom">

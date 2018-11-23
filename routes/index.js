@@ -2,6 +2,36 @@ var express = require('express');
 var router = express.Router();
 
 var passport = require('passport');
+// var nodemailer = require('nodemailer');
+//
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   // port: 995,
+//   secure: true,
+//   auth: {
+//     user: 'tsiotrasi@gmail.com',
+//     pass: '111989aaa'
+//   },
+// });
+//
+// var mailOptions = {
+//   from: 'tsiotrasi@gmail.com',
+//   to: 'pertrosmosxolios@gmail.com',
+//   subject: 'Sending Email using Node.js',
+//   text: 'That was easy!'
+// };
+//
+// transporter.sendMail(mailOptions, function(error, info){
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
+
+
+
+
 
 // Models
 var User = require('../models/user.js');
@@ -171,6 +201,7 @@ router.get('/programs/:id', function(req, res, next) {
       item.gallery = JSON.parse(item.gallery);
     })
     program = result[0];
+    console.log(program);
     res.render('program', {
       title: 'Προγράμματα',
       program: program,
