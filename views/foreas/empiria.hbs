@@ -31,7 +31,7 @@
           <a class="nav-link imee-pill " href="/org">Οργάνωση & Υπηρεσίες</a>
         </li>
         <li class="nav-item mx-2 my-1">
-          <a class="nav-link imee-pill " href="/foreas/ekdilo">Αίθουσα εκδηλώσεων</a>
+          <a class="nav-link imee-pill " href="/foreas/#">Πολιτική Προστασίας</a>
         </li>
 
       </ul>
@@ -43,7 +43,6 @@
 <div class="row mx-0 my-4">
   <div class="col-12 p-0 ">
     <div class="imee-container rounded border shadow-sm">
-
 
       <div class="row mx-0">
         <div class="col-12 p-0">
@@ -57,11 +56,17 @@
               <div class="imee-foreas-card p-3 border shadow-sm rounded mb-3">
                 {{#if categories}}
                   {{#each categories}}
-                    {{#ifIn this ../categories}}
-
-                      <span class="imee-foreas-card-tag imee-text-grey-blue py-1 m-x-2 d-inline-block">{{this}}</span>
-
-                    {{/ifIn}}
+                    {{#each ../../categories}}
+                      {{#ifCond this.id '==' ../this}}
+                        <a href="/foreas/empiria/cat/{{id}}" class="imee-foreas-card-tag text-white imee-grey-blue px-2 py-1 mr-2 d-inline-block badge badge-primary">{{this.name}}</a>
+                      {{/ifCond}}
+                    {{/each}}
+                  {{else}}
+                    {{#each ../categories}}
+                      {{#ifCond this.id '==' ../this.id}}
+                        <a href="/foreas/empiria/cat/{{id}}" class="imee-foreas-card-tag text-white imee-grey-blue px-2 py-1 mr-2 d-inline-block badge badge-primary">{{this.name}}</a>
+                      {{/ifCond}}
+                    {{/each}}
                   {{/each}}
                 {{/if}}
                 <span class="imee-foreas-card-title d-block imee-text-black py-2">{{title}}</span>
@@ -69,102 +74,26 @@
               </div>
             {{/each}}
           {{/if}}
-          <!-- <div class="imee-foreas-card p-3 border shadow-sm rounded my-3">
-            <span class="imee-foreas-card-tag d-block imee-text-grey-blue py-1">ΚΟΙΝΩΤΙΚΗ ΠΡΩΤΟΒΟΥΛΙΑ 1992-1994</span>
-            <span class="imee-foreas-card-title d-block imee-text-black py-2">"ΑΠΑΣΧΟΛΗΣΗ" - ΑΞΟΝΑΣ "NOW"</span>
-            <a href="#" class="btn imee-btn-grey mt-3">Περισσότερα</a>
-          </div>
-          <div class="imee-foreas-card p-3 border shadow-sm rounded my-3">
-            <span class="imee-foreas-card-tag d-block imee-text-grey-blue py-1">ΚΟΙΝΩΤΙΚΗ ΠΡΩΤΟΒΟΥΛΙΑ 1992-1994</span>
-            <span class="imee-foreas-card-title d-block imee-text-black py-2">"ADAPT"</span>
-            <a href="#" class="btn imee-btn-grey mt-3">Περισσότερα</a>
-          </div>
-          <div class="imee-foreas-card p-3 border shadow-sm rounded my-3">
-            <span class="imee-foreas-card-tag d-block imee-text-grey-blue py-1">ΚΟΙΝΩΤΙΚΗ ΠΡΩΤΟΒΟΥΛΙΑ 1992-1994</span>
-            <span class="imee-foreas-card-title d-block imee-text-black py-2">"ADAPT"</span>
-            <a href="#" class="btn imee-btn-grey mt-3">Περισσότερα</a>
-          </div>
-          <div class="imee-foreas-card p-3 border shadow-sm rounded my-3">
-            <span class="imee-foreas-card-tag d-block imee-text-grey-blue py-1">ΚΟΙΝΩΤΙΚΗ ΠΡΩΤΟΒΟΥΛΙΑ 1992-1994</span>
-            <span class="imee-foreas-card-title d-block imee-text-black py-2">"ADAPT"</span>
-            <a href="#" class="btn imee-btn-grey mt-3">Περισσότερα</a>
-          </div>
-          <div class="imee-foreas-card p-3 border shadow-sm rounded my-3">
-            <span class="imee-foreas-card-tag d-block imee-text-grey-blue py-1">ΚΟΙΝΩΤΙΚΗ ΠΡΩΤΟΒΟΥΛΙΑ 1992-1994</span>
-            <span class="imee-foreas-card-title d-block imee-text-black py-2">"ADAPT"</span>
-            <a href="#" class="btn imee-btn-grey mt-3">Περισσότερα</a>
-          </div>
-          <div class="imee-foreas-card p-3 border shadow-sm rounded my-3">
-            <span class="imee-foreas-card-tag d-block imee-text-grey-blue py-1">ΚΟΙΝΩΤΙΚΗ ΠΡΩΤΟΒΟΥΛΙΑ 1992-1994</span>
-            <span class="imee-foreas-card-title d-block imee-text-black py-2">"ADAPT"</span>
-            <a href="#" class="btn imee-btn-grey mt-3">Περισσότερα</a>
-          </div> -->
-
-
-
-
-
 
 
         </div>
         <div class="col-md-4 py-3">
           <div class=" p-3 border shadow-sm rounded">
 
-            <div class="border-bottom py-4">
-              <a href="/foreas/empiria" class="imee-text-grey-blue imee-fw-600 " {{#if active}} {{#ifCond active '==' "all"}}style="color:#be2a27 !important;"{{/ifCond}}{{/if}}>Όλα</a>
+            <div class="py-2">
+              <a href="/foreas/empiria" class="dropdown-item {{#if active}} {{#ifCond active '==' "all"}} active {{/ifCond}} {{/if}}">Όλα</a>
             </div>
-
             {{#if categories}}
               {{#each categories}}
-                <div class="border-bottom py-4">
-                  <a href="/foreas/empiria/cat/{{id}}" class="imee-text-grey-blue imee-fw-600 " {{#if ../active}} {{#ifCond id '==' ../active}}style="color:#be2a27 !important;"{{/ifCond}}{{/if}}>{{name}}</a>
+                <div class="py-2 imee-foreas-category">
+                  <a href="/foreas/empiria/cat/{{id}}" class="dropdown-item  {{#if ../active}} {{#ifCond ../active '==' id}} active {{/ifCond}} {{/if}}">{{name}}</a>
                 </div>
-
               {{/each}}
             {{/if}}
 
 
-
-            <!-- <div class="border-bottom py-4">
-              <a href="#" class="imee-text-grey-blue imee-fw-600 ">2000-2006</a>
-            </div>
-            <div class="border-bottom py-4">
-              <a href="#" class="imee-text-grey-blue imee-fw-600 ">2007-2013</a>
-            </div>
-            <div class="border-bottom py-4">
-              <a href="#" class="imee-text-grey-blue imee-fw-600 ">Λ.Α.Ε.Κ.</a>
-            </div>
-            <div class="border-bottom py-4">
-              <a href="#" class="imee-text-grey-blue imee-fw-600 ">ΕΠΙΧΕΙΡΗΣΙΑΚΟ</a>
-            </div>
-            <div class="border-bottom py-4">
-              <a href="#" class="imee-text-grey-blue imee-fw-600 ">ΚΟΙΝΩΤΙΚΗ ΠΡΩΤΟΒΟΥΛΙΑ</a>
-            </div>
-            <div class="border-bottom py-4">
-              <a href="#" class="imee-text-grey-blue imee-fw-600 ">ΠΕΡΙΦΕΡΕΙΑΚΑ ΕΠΙΧΕΙΡΗΣΙΑΚΑ</a>
-            </div>
-            <div class="border-bottom py-4">
-              <a href="#" class="imee-text-grey-blue imee-fw-600 ">ΚΑΤΑΡΤΗΣΗ ΚΑΙ ΠΡΟΩΘΗΣΗ ΣΤΗΝ ΑΠΑΣΧΟΛΗΣΗ</a>
-            </div>
-            <div class="border-bottom py-4">
-              <a href="#" class="imee-text-grey-blue imee-fw-600 ">ΑΠΑΣΧΟΛΗΣΗ ΚΑΙ ΕΠΑΓΓΕΛΜΑΤΙΚΗ ΚΑΤΑΡΤΗΣΗ</a>
-            </div> -->
-
           </div>
         </div>
-
-        <!-- <div class="col-12 imee-text-black ">
-          <div class="row mx-0 ">
-            <div class="col-12 py-2 my-1 border-bottom">
-              <span class="imee-prog-title">Εσωτερική Οργάνωση & Υπηρεσίες</span>
-            </div>
-
-            <div class="col-12 fr-view mt-4 text-justify">
-
-            </div>
-
-          </div>
-        </div> -->
 
 
       </div>

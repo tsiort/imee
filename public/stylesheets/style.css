@@ -6360,8 +6360,9 @@ body {
 .imee-text-grey-blue {
   color: #767588 !important; }
 
-.dropdown:hover > .dropdown-menu {
-  display: block; }
+@media (min-width: 992px) {
+  .dropdown:hover > .dropdown-menu {
+    display: block; } }
 
 .dropdown > .dropdown-toggle:active {
   pointer-events: none; }
@@ -6371,6 +6372,20 @@ body {
 
 .dropdown-toggle::after {
   content: none; }
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #767588; }
+  .dropdown-item.active:hover, .dropdown-item:active:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #767588; }
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #16181b;
+  text-decoration: none;
+  background-color: #f8f9fa; }
 
 .imee-section-header {
   letter-spacing: 2px;
@@ -6572,9 +6587,12 @@ p {
 
 .imee-foreas-card > .imee-foreas-card-tag {
   font-size: 0.8rem;
-  font-weight: 600; }
+  font-weight: 400; }
 
 .imee-foreas-card > .imee-foreas-card-title {
   font-weight: 600; }
+
+.imee-foreas-category:last-child {
+  border: none !important; }
 
 /*# sourceMappingURL=style.css.map */

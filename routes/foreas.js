@@ -58,6 +58,7 @@ router.get(/empiria/, function(req, res, next) {
       result.forEach(function(item) {
         item.categories = JSON.parse(item.categories);
       });
+
       experience = result;
       next();
     });
@@ -108,7 +109,10 @@ router.get('/ekdilo', function(req, res, next) {
   });
 });
 router.get('/empiria', function(req, res, next) {
-  console.log(experience);
+
+
+
+
   res.render('foreas/empiria', {
     title: 'Ο Φορέας',
     categories: experience_categories,
@@ -149,7 +153,9 @@ router.get('/empiria/cat/:id', function(req, res, next) {
         title: 'Ο Φορέας',
         categories: cat,
         experience: exp,
-        active: catId
+        active: catId,
+        nav: nav,
+        prg: prg,        
       });
 
 

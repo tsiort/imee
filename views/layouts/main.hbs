@@ -72,14 +72,14 @@
             <a class="nav-link py-3 px-0 imee-text-blue text-truncate" href="/foreas" role="button">Ο ΦΟΡΕΑΣ</a>
             <span class="dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             </span>
-            <div class="dropdown-menu w-100 border-top-0 m-0" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu w-100 border border-top-0 mt-0" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" href="/foreas/">Ιστορικό</a>
               <a class="dropdown-item" href="/foreas/synerg">Συνεργασίες</a>
               <a class="dropdown-item" href="/foreas/empiria">Εμπειρια του φορέα</a>
               <a class="dropdown-item" href="/foreas/ipodomi">Υποδομη</a>
               <a class="dropdown-item" href="/foreas/drast">Δραστηριότητα</a>
               <a class="dropdown-item" href="/foreas/org">Οργάνωση & Υπηρεσίες</a>
-              <a class="dropdown-item" href="/foreas/ekdilo">Αίθουσα εκδηλώσεων</a>
+              <a class="dropdown-item" href="#">Πολιτική Προστασίας</a>
             </div>
           </div>
 
@@ -92,45 +92,40 @@
             <a class="nav-link py-3 px-0 imee-text-blue text-truncate" href="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</a>
           </div>
           <div class="w-100"></div>
-          <div class="row w-100 " id="imee-mega-nav">
-            <div class="col-12 c d-lg-block">
+          <div class="row w-100 " id="imee-mega-nav"  style="height:0px;">
+            <div class="col-12 d-none d-lg-block" style="height:0px;">
               <!-- Mega Nav  -->
               {{#if nav}}
-                <div class="row mx-0 position-absolute  border-top-0 shadow bg-white" style="z-index:1000; width:90%; left:5%;">
-                  <div class="col-12" style="height:350px;">
-                    <div class="row mx-0 py-3 h-100 justify-content-around">
+                <!-- <div class="row mx-0 position-absolute  border-top-0 shadow bg-white" style="z-index:1000; width:90%; left:5%;"> -->
+                <div class="row mx-0 position-absolute border border-top-0 bg-white w-100" style="z-index:1000;">
+                  <div class="col-12 px-0">
+                    <div class="row mx-0 py-5 h-100 justify-content-around">
                       {{#if nav.meganav_title_1}}
-                        <div class="col pl-4 border-right ">
+                        <div class="col px-3  ">
                           <div class="row mx-0">
-                            <div class="col-12 py-3">
-                              <h6 class="imee-text-black font-weight-bold ">
+                            <div class="col-12 px-0">
+                              <h5 class="dropdown-header">
                                 {{nav.meganav_title_1}}
-                              </h6>
+                              </h5>
                             </div>
                             {{#if nav.meganav_title_1_1}}
-                              <div class="col-12 py-1">
-                                <a href="{{#if nav.meganav_title_1_1_prog}}/programs/{{nav.meganav_title_1_1_prog}}{{else}}#{{/if}}">
-                                  <h6 class="imee-text-black font-weight-normal ">
-                                    {{nav.meganav_title_1_1}}
-                                  </h6>
+                              <div class="col-12 px-0">
+                                <a href="{{#if nav.meganav_title_1_1_prog}}/programs/{{nav.meganav_title_1_1_prog}}{{else}}#{{/if}}" class="dropdown-item">
+                                  {{nav.meganav_title_1_1}}
                                 </a>
                               </div>
                             {{/if}}
                             {{#if nav.meganav_title_1_2}}
-                              <div class="col-12 py-1">
-                                <a href="{{#if nav.meganav_title_1_2_prog}}/programs/{{nav.meganav_title_1_2_prog}}{{else}}#{{/if}}">
-                                  <h6 class="imee-text-black font-weight-normal ">
-                                    {{nav.meganav_title_1_2}}
-                                  </h6>
+                              <div class="col-12 px-0">
+                                <a href="{{#if nav.meganav_title_1_2_prog}}/programs/{{nav.meganav_title_1_2_prog}}{{else}}#{{/if}}" class="dropdown-item">
+                                  {{nav.meganav_title_1_2}}
                                 </a>
                               </div>
                             {{/if}}
                             {{#if nav.meganav_title_1_3}}
-                              <div class="col-12 py-1">
-                                <a href="{{#if nav.meganav_title_1_3_prog}}/programs/{{nav.meganav_title_1_3_prog}}{{else}}#{{/if}}">
-                                  <h6 class="imee-text-black font-weight-normal ">
-                                    {{nav.meganav_title_1_3}}
-                                  </h6>
+                              <div class="col-12 px-0">
+                                <a href="{{#if nav.meganav_title_1_3_prog}}/programs/{{nav.meganav_title_1_3_prog}}{{else}}#{{/if}}" class="dropdown-item">
+                                  {{nav.meganav_title_1_3}}
                                 </a>
                               </div>
                             {{/if}}
@@ -138,37 +133,31 @@
                         </div>
                       {{/if}}
                       {{#if nav.meganav_title_2}}
-                        <div class="col pl-4 border-right ">
+                        <div class="col px-3 ">
                           <div class="row mx-0">
-                            <div class="col-12 py-3">
-                              <h6 class="imee-text-black font-weight-bold ">
+                            <div class="col-12 px-0">
+                              <h5 class="dropdown-header">
                                 {{nav.meganav_title_2}}
-                              </h6>
+                              </h5>
                             </div>
                             {{#if nav.meganav_title_2_1}}
-                              <div class="col-12 py-1">
-                                <a href="{{#if nav.meganav_title_2_1_prog}}/programs/{{nav.meganav_title_2_1_prog}}{{else}}#{{/if}}">
-                                  <h6 class="imee-text-black font-weight-normal ">
+                              <div class="col-12 px-0">
+                                <a href="{{#if nav.meganav_title_2_1_prog}}/programs/{{nav.meganav_title_2_1_prog}}{{else}}#{{/if}}" class="dropdown-item">
                                     {{nav.meganav_title_2_1}}
-                                  </h6>
                                 </a>
                               </div>
                             {{/if}}
                             {{#if nav.meganav_title_2_2}}
-                              <div class="col-12 py-1">
-                                <a href="{{#if nav.meganav_title_2_2_prog}}/programs/{{nav.meganav_title_2_2_prog}}{{else}}#{{/if}}">
-                                  <h6 class="imee-text-black font-weight-normal ">
+                              <div class="col-12 px-0">
+                                <a href="{{#if nav.meganav_title_2_2_prog}}/programs/{{nav.meganav_title_2_2_prog}}{{else}}#{{/if}}" class="dropdown-item">
                                     {{nav.meganav_title_2_2}}
-                                  </h6>
                                 </a>
                               </div>
                             {{/if}}
                             {{#if nav.meganav_title_2_3}}
-                              <div class="col-12 py-1">
-                                <a href="{{#if nav.meganav_title_2_3_prog}}/programs/{{nav.meganav_title_2_3_prog}}{{else}}#{{/if}}">
-                                  <h6 class="imee-text-black font-weight-normal ">
+                              <div class="col-12 px-0">
+                                <a href="{{#if nav.meganav_title_2_3_prog}}/programs/{{nav.meganav_title_2_3_prog}}{{else}}#{{/if}}" class="dropdown-item">
                                     {{nav.meganav_title_2_3}}
-                                  </h6>
                                 </a>
                               </div>
                             {{/if}}
@@ -176,50 +165,27 @@
                         </div>
                       {{/if}}
                       {{#if prg}}
-                        <div class="col pl-4 ">
+                        <div class="col px-3 ">
                           <div class="row mx-0">
-                            <div class="col-12 py-3">
+                            <div class="col-12 px-0">
                               <!-- <h5 class="imee-text-black font-weight-bold ">
                                 ΔΗΜΟΦΙΛΕΣ
                               </h5> -->
                             </div>
-                            <div class="col-12 text-center">
-                              <a href="/programs/{{prg.id}}">
-                                <div class="row mx-0 border">
+                            <div class="col-12 px-0 text-center">
+                              <a href="/programs/{{prg.id}}" class="dropdown-item">
+                                <div class="row mx-0 ">
                                   <div class="col-12 p-0">
                                     <img src="/files/uploads/images/{{prg.image}}" class="" alt="{{prg.title}}" style="max-height: 200px;height: 200px; width: 100%;object-fit: cover;">
                                   </div>
-                                  <div class="col-12 imee-light-grey ">
-                                    <h6 class="imee-text-black font-weight-normal ">
+                                  <div class="col-12 px-0" style="padding-top: .7rem;">
+                                    <span >
                                       {{prg.title}}
-                                    </h6>
+                                    </span>
                                   </div>
                                 </div>
                               </a>
                             </div>
-                            <!-- <div class="col-12">
-                              <h3 class="imee-text-black">
-                                <div class="col-12 py-3">
-                                  <h5 class="imee-text-black font-weight-bold ">
-                                    ΔΗΜΟΦΙΛΕΣ
-                                  </h5>
-                                </div>
-                                <div class="col-12 py-1">
-                                  <a href="#">
-                                    <div class="row mx-0 border">
-                                      <div class="col-12 p-0">
-                                        <img src="/images/worker.jpg" class="img-thumbnail" alt="Featured">
-                                      </div>
-                                      <div class="col-12 imee-light-grey text-center ">
-                                        <h6 class="imee-text-black font-weight-normal ">
-                                          Σεμινάριο Τεχνικών
-                                        </h6>
-                                      </div>
-                                    </div>
-                                  </a>
-                                </div>
-                              </h3>
-                            </div> -->
                           </div>
                         </div>
                       {{/if}}
@@ -274,7 +240,7 @@
           <div class="row mx-0">
             <div class="col-12 py-2 text-center">
               <a class="" href="/foreas">
-              <h6 class="text-light" style="font-weight:700">Ο ΦΟΡΕΑΣ</h6>
+                <h6 class="text-light" style="font-weight:700">Ο ΦΟΡΕΑΣ</h6>
               </a>
             </div>
             <div class="col-12 my-2">
