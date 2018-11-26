@@ -6466,30 +6466,20 @@ body {
   padding: 0.0rem 0.9rem !important;
   font-size: 0.95rem; }
   .imee-pill.active {
-    color: #011f79 !important;
-    font-weight: 700;
     background-color: white !important;
-    border: none !important; }
+    border: none !important;
+    color: #011f79 !important; }
   .imee-pill:hover {
     color: #011f79 !important;
     background-color: white !important; }
 
 .imee-card {
   height: 100%;
-  line-height: 1.5;
-  font-size: 13px; }
+  line-height: 1.5; }
   .imee-card > img {
     max-height: 250px;
     height: 250px;
     object-fit: cover; }
-  .imee-card > .card-body {
-    overflow: hidden; }
-    .imee-card > .card-body > .card-title {
-      height: 2.55rem;
-      overflow: hidden; }
-    .imee-card > .card-body > .card-text {
-      height: 39px;
-      overflow: hidden; }
   .imee-card > .card-footer {
     border: 0;
     background-color: transparent; }
@@ -6533,11 +6523,11 @@ p {
     display: none; } }
 
 .imee-resp-font {
-  font-size: 0.9rem; }
+  font-size: 15px; }
 
 @media (max-width: 767.98px) {
   .imee-resp-font {
-    font-size: 0.8rem !important; } }
+    font-size: 12px; } }
 
 .red {
   border: 1px solid red; }
@@ -6584,13 +6574,6 @@ p {
 
 .fa-facebook:hover {
   color: #011f79; }
-
-.imee-foreas-card > .imee-foreas-card-tag {
-  font-size: 0.8rem;
-  font-weight: 400; }
-
-.imee-foreas-card > .imee-foreas-card-title {
-  font-weight: 600; }
 
 .imee-foreas-category:last-child {
   border: none !important; }

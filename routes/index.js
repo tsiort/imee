@@ -89,6 +89,9 @@ router.get('/', function(req, res, next) {
         res.json(err);
         return;
       }
+      result.forEach(function(item) {
+        item.categories = JSON.parse(item.categories);
+      });
       programs = result;
 
       News.getFeatured(function(err, result) {
@@ -137,6 +140,9 @@ router.get('/programs', function(req, res, next) {
         res.json(err);
         return;
       }
+      result.forEach(function(item) {
+        item.categories = JSON.parse(item.categories);
+      });
       program = result;
 
       res.render('programs', {
@@ -169,6 +175,9 @@ router.get('/programs/category/:id', function(req, res, next) {
         res.json(err);
         return;
       }
+      result.forEach(function(item) {
+        item.categories = JSON.parse(item.categories);
+      });
       program = result;
 
       res.render('programs', {
@@ -201,7 +210,7 @@ router.get('/programs/:id', function(req, res, next) {
       item.gallery = JSON.parse(item.gallery);
     })
     program = result[0];
-    console.log(program);
+
     res.render('program', {
       title: 'Προγράμματα',
       program: program,

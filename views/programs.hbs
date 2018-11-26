@@ -41,7 +41,23 @@
                 <img class="card-img-top img-fluid" src="/files/uploads/images/{{image}}" alt="{{title}}">
                 <div class="card-body">
                   <h6 class="card-title imee-text-blue">{{title}}</h6>
-                  <div class="card-text text-justify fr-view">{{{text}}}</div>
+                  <div class="card-text text-justify fr-view">
+                    {{#if categories}}
+                      {{#each categories}}
+                        {{#each ../../category}}
+                          {{#ifCond this.id '==' ../this}}
+                            <a href="/programs/category/{{this.id}}" class="text-white imee-grey-blue px-2 py-1 mr-2 my-1  float-left badge badge-primary font-weight-normal">{{this.category}}</a>
+                          {{/ifCond}}
+                        {{/each}}
+                      {{else}}
+                        {{#each ../category}}
+                          {{#ifCond this.id '==' ../categories}}
+                            <a href="/programs/category/{{this.id}}" class="text-white imee-grey-blue px-2 py-1 mr-2 my-1  float-left badge badge-primary font-weight-normal">{{this.category}}</a>
+                          {{/ifCond}}
+                        {{/each}}
+                      {{/each}}
+                    {{/if}}
+                  </div>
                 </div>
                 <div class="card-footer">
                   <a href="/programs/{{id}}" class="btn imee-btn-grey">Περισσότερα</a>

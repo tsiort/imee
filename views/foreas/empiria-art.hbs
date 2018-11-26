@@ -49,36 +49,64 @@
           <img src="/images/Empeiria_tou_forea.jpg" alt="" style="height:400px;width:100%;object-fit:cover;">
         </div>
       </div>
-      <div class="row mx-0  py-3 " id="imee-content">
+      <div class="row mx-0  py-3" id="imee-content">
         <div class="col-md-8 py-3">
           {{#if experience}}
-            {{#each experience}}
-              <div class="imee-foreas-card p-3 border shadow-sm rounded mb-3">
-                {{#if categories}}
-                <div class="row mx-0">
-                  {{#each categories}}
-                    {{#each ../../categories}}
-                      {{#ifCond this.id '==' ../this}}
-                        <a href="/foreas/empiria/cat/{{id}}#imee-content" class="text-white imee-grey-blue px-2 py-1 mr-2 my-1 float-left badge badge-primary font-weight-normal">{{this.name}}</a>
-                      {{/ifCond}}
+
+            <div class="px-3  mb-3">
+              <!-- Tags -->
+
+              {{#if experience.categories}}
+                <div class="row mx-0 mb-3">
+                  <div class="col-12 px-0">
+                    {{#each experience.categories}}
+                      {{#each ../categories}}
+                        {{#ifCond this.id '==' ../this}}
+                          <a href="/foreas/empiria/cat/{{id}}#imee-content" class="text-white imee-grey-blue px-2 py-1 mr-2 my-1 float-left badge badge-primary font-weight-normal">{{this.name}}</a>
+                        {{/ifCond}}
+                      {{/each}}
+                    {{else}}
+                      {{#each categories}}
+                        {{#ifCond this.id '==' ../experience.categories}}
+                          <a href="/foreas/empiria/cat/{{id}}#imee-content" class="text-white imee-grey-blue px-2 py-1 mr-2 my-1 float-left badge badge-primary font-weight-normal">{{this.name}}</a>
+                        {{/ifCond}}
+                      {{/each}}
                     {{/each}}
-                  {{else}}
-                    {{#each ../categories}}
-                      {{#ifCond this.id '==' ../this.id}}
-                        <a href="/foreas/empiria/cat/{{id}}#imee-content" class="text-white imee-grey-blue px-2 py-1 mr-2 my-1 float-left badge badge-primary font-weight-normal">{{this.name}}</a>
-                      {{/ifCond}}
-                    {{/each}}
-                  {{/each}}
                   </div>
-                {{/if}}
-                <span class="imee-foreas-card-title d-block imee-text-black py-2">{{title}}</span>
-                <a href="/foreas/empiria/article/{{id}}{{#if ../active}}/{{../active}}{{/if}}#imee-content" class="btn imee-btn-grey mt-3">Περισσότερα</a>
+                </div>
+              {{/if}}
+
+
+              <!-- Title -->
+              <div class="row mx-0 mb-3">
+                <div class="col-12 px-0 pt-3 mb-3 border-bottom">
+                  {{experience.title}}
+                </div>
               </div>
-            {{/each}}
+
+              <!-- <span class=" d-block imee-text-black py-2"></span> -->
+              <div class="row mx-0">
+                <div class="col-12 px-0 py-3 ">
+                  {{{experience.text}}}
+                </div>
+              </div>
+
+              <div class="row mx-0">
+                <div class="col-12 px-0 text-center py-4">
+                  <a href="/foreas/empiria{{#if active}}{{#ifCond active '!=' "all"}}/cat/{{active}}{{/ifCond}}{{/if}}#imee-content" class="btn imee-btn-grey">
+                    <i class="fas fa-arrow-left"></i>
+                    Πίσω
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
           {{/if}}
-
-
         </div>
+
+
+
         <div class="col-md-4 py-3">
           <div class=" p-3 border shadow-sm rounded">
 
@@ -100,20 +128,14 @@
 
       </div>
       <!-- Navigation buttons -->
-      <div class="row mx-0 my-4">
+      <!-- <div class="row mx-0 my-4">
         <div class="col-12 col-sm-6 text-center text-sm-left py-2">
-          <a href="/foreas/synerg" class="btn imee-btn-grey">
+          <a href="/foreas/empiria{{#if active}}{{#ifCond active '!=' "all"}}/cat/{{active}}{{/ifCond}}{{/if}}#imee-content" class="btn imee-btn-grey">
             <i class="fas fa-arrow-left"></i>
-            Συνεργασίες
+            Πίσω
           </a>
         </div>
-        <div class="col-12 col-sm-6 text-center text-sm-right py-2">
-          <a href="/foreas/ipodomi" class="btn imee-btn-grey">
-            Υποδομη
-            <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
+      </div> -->
 
     </div>
   </div>

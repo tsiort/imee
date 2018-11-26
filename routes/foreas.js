@@ -149,21 +149,62 @@ router.get('/empiria/cat/:id', function(req, res, next) {
         item.categories = JSON.parse(item.categories);
       });
       exp = result;
+
       res.render('foreas/empiria', {
         title: 'Ο Φορέας',
         categories: cat,
         experience: exp,
         active: catId,
         nav: nav,
-        prg: prg,        
+        prg: prg,
       });
-
-
     });
   });
 
+});
 
+
+router.get('/empiria/article/:expid/:catid', function(req, res, next) {
+
+  var cat = [];
+  var exp = [];
+
+  var catId = req.params.catid;
+  var expId = req.params.expid;
+
+  ExperienceCat.getAll(function(err, result) {
+    if (err) {
+      res.json(err);
+      return;
+    }
+
+    cat = result;
+
+    Experience.get(expId, function(err, result) {
+      if (err) {
+        res.json(err);
+        return;
+      }
+
+      result.forEach(function(item) {
+        item.categories = JSON.parse(item.categories);
+      });
+      exp = result[0];
+
+      res.render('foreas/empiria-art', {
+        title: 'Ο Φορέας',
+        categories: cat,
+        experience: exp,
+        active: catId,
+        nav: nav,
+        prg: prg,
+        backlink: req.originalUrl,
+      });
+    });
+  });
 
 });
+
+
 
 module.exports = router;

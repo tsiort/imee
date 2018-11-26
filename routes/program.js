@@ -95,12 +95,12 @@ router.post('/new', authenticationMiddleware(), function(req, res, next) {
   var progMainPage = req.body.programMainPage;
   var progAttachments = req.body.programAttachments;
   var progGallery = req.body.programGalleryImages;
-  var progStartDate = req.body.programStartDate;
-  var progEndDate = req.body.programEndDate;
-  var progHours = req.body.programHours;
-  var progCost = req.body.programCost;
-  var progLocation = req.body.programLocation;
-  var progTeacher = req.body.programTeacher;
+  var progStartDate = req.body.programStartDate || null;
+  var progEndDate = req.body.programEndDate || null;
+  var progHours = req.body.programHours || null;
+  var progCost = req.body.programCost || null;
+  var progLocation = req.body.programLocation || null;
+  var progTeacher = req.body.programTeacher || null;
 
 
   if (req.body.programMainPage == 'on')
