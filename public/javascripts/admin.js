@@ -36,7 +36,7 @@ $(function() {
     $('#programGalleryPrev-3').empty();
     $('#sliderimg3').val('');
   })
-  
+
   $('[data-toggle="offcanvas"]').on('click', function() {
     $('.offcanvas-collapse').toggleClass('open');
   })
@@ -61,6 +61,27 @@ $(function() {
     $('#programAttachmentsPreview').val($(this).val());
   })
   $('#programAttachmentsPreview').val($('#programAttachments').val())
+
+  // alert($('input[name="progSections"]').val());
+
+
+
+  $('input[name="progSections"]').on('change', function() {
+
+    if ($(this).val() == '2') {
+      $('.imee-admin-single-section').removeClass('d-block');
+      $('.imee-admin-multiple-sections').addClass('d-block');
+      $('.imee-admin-multiple-sections').removeClass('d-none');
+      $('.imee-admin-single-section').addClass('d-none');
+    } else {
+      $('.imee-admin-single-section').removeClass('d-none');
+      $('.imee-admin-single-section').addClass('d-block');
+      $('.imee-admin-multiple-sections').removeClass('d-block');
+      $('.imee-admin-multiple-sections').addClass('d-none');
+
+    }
+
+  })
 
 
 })

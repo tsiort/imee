@@ -6578,4 +6578,18 @@ p {
 .imee-foreas-category:last-child {
   border: none !important; }
 
+.imee-collapse {
+  text-decoration: none;
+  clear: both; }
+  .imee-collapse:hover {
+    text-decoration: none; }
+    .imee-collapse:hover > i {
+      color: #be2a27; }
+
+a[aria-expanded="true"] {
+  background: #767588 !important;
+  color: white !important; }
+  a[aria-expanded="true"] > .fa-plus::before {
+    content: "\f068"; }
+
 /*# sourceMappingURL=style.css.map */

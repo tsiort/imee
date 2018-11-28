@@ -80,11 +80,69 @@
           </div>
         </div>
       </div>
-
+      <!-- Addition of multiple sections  -->
       <div class="form-group my-5 pl-3">
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="singleSection" name="progSections" class="custom-control-input" value="1" {{#ifCond result.section_indicator '==' '1'}} checked {{/ifCond}}>
+          <label class="custom-control-label" for="singleSection"><small class="text-secondary">Μία ενότητα</small></label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="multipleSection" name="progSections" class="custom-control-input" value="2" {{#ifCond result.section_indicator '==' '2'}} checked {{/ifCond}}>
+          <label class="custom-control-label" for="multipleSection"><small class="text-secondary">Πολλαπλές ενότητες</small></label>
+        </div>
+      </div>
+
+      <!-- Single section -->
+      <div class="form-group my-5 pl-3 imee-admin-single-section {{#ifCond result.section_indicator '==' '1'}} d-block {{else}} d-none {{/ifCond}}">
         <label for="programText" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
         <textarea class="wysiwyg" name="programText" id="programText" required>{{result.text}}</textarea>
       </div>
+
+
+      <!-- Multiple sections -->
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections {{#ifCond result.section_indicator '==' '2'}} d-block {{else}} d-none {{/ifCond}}">
+        <label for="section1title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section1title" name="section1title" aria-describedby="textHelp" placeholder="Κεφαλίδα" {{#if result.section01title}}value="{{result.section01title}}"{{/if}}>
+        <label for="section1text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο Ενότητας</small></label>
+        <textarea class="wysiwyg" name="section1text" id="section1text">{{result.section01text}}</textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections {{#ifCond result.section_indicator '==' '2'}} d-block {{else}} d-none {{/ifCond}}">
+        <label for="section2title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section2title" name="section2title" aria-describedby="textHelp" placeholder="Κεφαλίδα" {{#if result.section02title}}value="{{result.section02title}}"{{/if}}>
+        <label for="section2text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section2text" id="section2text">{{result.section02text}}</textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections {{#ifCond result.section_indicator '==' '2'}} d-block {{else}} d-none {{/ifCond}}">
+        <label for="section3title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section32title" name="section3title" aria-describedby="textHelp" placeholder="Κεφαλίδα" {{#if result.section03title}}value="{{result.section03title}}"{{/if}}>
+        <label for="section3text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section3text" id="section3text">{{result.section03text}}</textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections {{#ifCond result.section_indicator '==' '2'}} d-block {{else}} d-none {{/ifCond}}">
+        <label for="section4title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section4title" name="section4title" aria-describedby="textHelp" placeholder="Κεφαλίδα" {{#if result.section04title}}value="{{result.section04title}}"{{/if}}>
+        <label for="section4text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section4text" id="section4text">{{result.section04text}}</textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections {{#ifCond result.section_indicator '==' '2'}} d-block {{else}} d-none {{/ifCond}}">
+        <label for="section5title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section5title" name="section5title" aria-describedby="textHelp" placeholder="Κεφαλίδα" {{#if result.section05title}}value="{{result.section05title}}"{{/if}}>
+        <label for="section5text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section5text" id="section5text">{{result.section05text}}</textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections {{#ifCond result.section_indicator '==' '2'}} d-block {{else}} d-none {{/ifCond}}">
+        <label for="section6title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section6title" name="section6title" aria-describedby="textHelp" placeholder="Κεφαλίδα" {{#if result.section06title}}value="{{result.section06title}}"{{/if}}>
+        <label for="section6text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section6text" id="section6text">{{result.section06text}}</textarea>
+      </div>
+      <!-- Addition of multiple sections  -->
+
 
       <div class="form-group my-5 pl-3">
         <label for="programCategories" class="m-0"><small class="text-primary" style="font-weight:600;">Κατηγορίες</small></label>

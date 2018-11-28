@@ -63,7 +63,7 @@ router.get('/new', authenticationMiddleware(), function(req, res, next) {
       })
 
       Category.getAll(function(err, result) {
-        console.log(result);
+
         if (err) {
           res.json(err);
         } else {
@@ -101,7 +101,19 @@ router.post('/new', authenticationMiddleware(), function(req, res, next) {
   var progCost = req.body.programCost || null;
   var progLocation = req.body.programLocation || null;
   var progTeacher = req.body.programTeacher || null;
-
+  var progSections = req.body.progSections;
+  var section1title = req.body.section1title || null;
+  var section1text = req.body.section1text || null;
+  var section2title = req.body.section2title || null;
+  var section2text = req.body.section2text || null;
+  var section3title = req.body.section3title || null;
+  var section3text = req.body.section3text || null;
+  var section4title = req.body.section4title || null;
+  var section4text = req.body.section4text || null;
+  var section5title = req.body.section5title || null;
+  var section5text = req.body.section5text || null;
+  var section6title = req.body.section6title || null;
+  var section6text = req.body.section6text || null;
 
   if (req.body.programMainPage == 'on')
     progMainPage = 1;
@@ -109,14 +121,43 @@ router.post('/new', authenticationMiddleware(), function(req, res, next) {
     progMainPage = 0;
 
 
-  Program.new(progTitle, progMainPage, progText, progCategories, progAttachments, progImg, progGallery, progStartDate, progEndDate, progHours, progCost, progLocation, progTeacher, function(err, result) {
-    if (err) {
-      res.json(err);
-    } else {
+  Program.new(
+    progTitle,
+    progMainPage,
+    progText,
+    progCategories,
+    progAttachments,
+    progImg,
+    progGallery,
+    progStartDate,
+    progEndDate,
+    progHours,
+    progCost,
+    progLocation,
+    progTeacher,
+    progSections,
+    section1title,
+    section1text,
+    section2title,
+    section2text,
+    section3title,
+    section3text,
+    section4title,
+    section4text,
+    section5title,
+    section5text,
+    section6title,
+    section6text,
+    function(err, result) {
+
+      if (err) {
+        res.json(err);
+        return;
+      }
       req.flash('success_msg', 'Το πρόγραμμα ' + progTitle + ' δημιουργήθηκε με επιτυχία')
       res.redirect('/admin/program');
-    }
-  });
+
+    });
 });
 
 /* Edit Program GET */
@@ -202,6 +243,19 @@ router.post('/:id/edit', authenticationMiddleware(), function(req, res, next) {
   var progCost = req.body.programCost;
   var progLocation = req.body.programLocation;
   var progTeacher = req.body.programTeacher;
+  var progSections = req.body.progSections;
+  var section1title = req.body.section1title || null;
+  var section1text = req.body.section1text || null;
+  var section2title = req.body.section2title || null;
+  var section2text = req.body.section2text || null;
+  var section3title = req.body.section3title || null;
+  var section3text = req.body.section3text || null;
+  var section4title = req.body.section4title || null;
+  var section4text = req.body.section4text || null;
+  var section5title = req.body.section5title || null;
+  var section5text = req.body.section5text || null;
+  var section6title = req.body.section6title || null;
+  var section6text = req.body.section6text || null;
 
   if (req.body.programMainPage == 'on')
     progMainPage = 1;
@@ -209,15 +263,48 @@ router.post('/:id/edit', authenticationMiddleware(), function(req, res, next) {
     progMainPage = 0;
 
 
-  Program.update(id, progTitle, progMainPage, progText, progCategories, progAttachments, progImg, progGallery, progStartDate, progEndDate, progHours, progCost, progLocation, progTeacher, function(err, result) {
-    if (err) {
-      res.json(err);
-    } else {
+  Program.update(
+    id,
+    progTitle,
+    progMainPage,
+    progText,
+    progCategories,
+    progAttachments,
+    progImg,
+    progGallery,
+    progStartDate,
+    progEndDate,
+    progHours,
+    progCost,
+    progLocation,
+    progTeacher,
+    progSections,
+    section1title,
+    section1text,
+    section2title,
+    section2text,
+    section3title,
+    section3text,
+    section4title,
+    section4text,
+    section5title,
+    section5text,
+    section6title,
+    section6text,
+    function(err, result) {
+
+      if (err) {
+        res.json(err);
+        return;
+      }
+
       req.flash('success_msg', 'Το πρόγραμμα ' + progTitle + ' ενημερώθηκε με επιτυχία')
       res.redirect('/admin/program');
-    }
-  });
+
+    });
 });
+
+
 /* Delete Program GET */
 router.get('/:id/delete', authenticationMiddleware(), function(req, res, next) {
   var id = req.params.id;

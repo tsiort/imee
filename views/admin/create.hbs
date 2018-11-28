@@ -41,11 +41,68 @@
           </div>
         </div>
       </div>
-
+      <!-- Addition of multiple sections  -->
       <div class="form-group my-5 pl-3">
-        <label for="programText" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
-        <textarea class="wysiwyg" name="programText" id="programText" required></textarea>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="singleSection" name="progSections" class="custom-control-input" value="1" checked>
+          <label class="custom-control-label" for="singleSection"><small class="text-secondary">Μία ενότητα</small></label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="multipleSection" name="progSections" class="custom-control-input" value="2">
+          <label class="custom-control-label" for="multipleSection"><small class="text-secondary">Πολλαπλές ενότητες</small></label>
+        </div>
       </div>
+
+      <!-- Single section -->
+      <div class="form-group my-5 pl-3 imee-admin-single-section">
+        <label for="programText" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="programText" id="programText"></textarea>
+      </div>
+
+
+      <!-- Multiple sections -->
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections">
+        <label for="section1title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section1title" name="section1title" aria-describedby="textHelp" placeholder="Κεφαλίδα">
+        <label for="section1text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο Ενότητας</small></label>
+        <textarea class="wysiwyg" name="section1text" id="section1text"></textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections">
+        <label for="section2title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section2title" name="section2title" aria-describedby="textHelp" placeholder="Κεφαλίδα">
+        <label for="section2text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section2text" id="section2text"></textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections">
+        <label for="section3title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section32title" name="section3title" aria-describedby="textHelp" placeholder="Κεφαλίδα">
+        <label for="section3text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section3text" id="section3text"></textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections">
+        <label for="section4title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section4title" name="section4title" aria-describedby="textHelp" placeholder="Κεφαλίδα">
+        <label for="section4text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section4text" id="section4text"></textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections">
+        <label for="section5title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section5title" name="section5title" aria-describedby="textHelp" placeholder="Κεφαλίδα">
+        <label for="section5text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section5text" id="section5text"></textarea>
+      </div>
+
+      <div class="form-group my-5 pl-3 imee-admin-multiple-sections">
+        <label for="section6title" class="m-0"><small class="text-primary" style="font-weight:600;">Κεφαλίδα Ενότητας</small></label>
+        <input type="text" class="form-control form-control-sm" id="section6title" name="section6title" aria-describedby="textHelp" placeholder="Κεφαλίδα">
+        <label for="section6text" class="m-0"><small class="text-primary" style="font-weight:600;">Κείμενο</small></label>
+        <textarea class="wysiwyg" name="section6text" id="section6text"></textarea>
+      </div>
+      <!-- Addition of multiple sections  -->
 
       <div class="form-group my-5 pl-3">
         <label for="programCategories" class="m-0"><small class="text-primary" style="font-weight:600;">Κατηγορίες</small></label>
@@ -242,7 +299,7 @@
   {{/ifCond}}
 
   {{#ifCond type '==' 'exp-file'}}
-    <h6 class="border-bottom border-gray pb-2 mb-0" style="f  ont-weight:600;">Νέο Αρχείο	</h6>
+    <h6 class="border-bottom border-gray pb-2 mb-0" style="f  ont-weight:600;">Νέο Αρχείο </h6>
 
     <form action="/admin/settings/exp-file" method="post" class="mt-3">
       <div class="form-group">

@@ -27,7 +27,105 @@
                 <!-- <h3 class="py-0 m-0 imee-section-header imee-text-grey-blue">{{program.title}}</h3> -->
               </div>
               <div class="col-12 fr-view mt-4">
-                {{{program.text}}}
+                {{#ifCond program.section_indicator '==' '2'}}
+
+                  {{#if program.section01title}}
+                    <div class="row mx-0 my-2 ">
+                      <div class="col-12 px-0 ">
+                        <a class="imee-collapse w-100 d-block py-3 pl-4 imee-text-grey-blue font-weight-bold imee-light-grey collapsed" data-toggle="collapse" href="#section01title" role="" aria-expanded="true" aria-controls="collapse">
+                          <i class="fas fa-plus"></i> {{program.section01title}}
+                        </a>
+                        <div class="collapse show" id="section01title">
+                          <div class=" w-100 pl-4 mt-3 text-justify">
+                            {{{program.section01text}}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{/if}}
+
+                  {{#if program.section02title}}
+                    <div class="row mx-0 my-2 ">
+                      <div class="col-12 px-0 ">
+                        <a class="imee-collapse w-100 d-block py-3 pl-4 imee-text-grey-blue font-weight-bold imee-light-grey" data-toggle="collapse" href="#section02title" role="" aria-expanded="false" aria-controls="collapse">
+                          <i class="fas fa-plus mr-1"></i> {{program.section02title}}
+                        </a>
+                        <div class="collapse" id="section02title">
+                          <div class=" w-100 pl-4 mt-3 text-justify">
+                            {{{program.section02text}}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{/if}}
+
+                  {{#if program.section03title}}
+                    <div class="row mx-0 my-2 ">
+                      <div class="col-12 px-0 ">
+                        <a class="imee-collapse w-100 d-block py-3 pl-4 imee-text-grey-blue font-weight-bold imee-light-grey" data-toggle="collapse" href="#section03title" role="" aria-expanded="false" aria-controls="collapse">
+                          <i class="fas fa-plus"></i> {{program.section03title}}
+                        </a>
+                        <div class="collapse" id="section03title">
+                          <div class=" w-100 pl-4 mt-3 text-justify">
+                            {{{program.section03text}}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{/if}}
+
+                  {{#if program.section04title}}
+                    <div class="row mx-0 my-2 ">
+                      <div class="col-12 px-0 ">
+                        <a class="imee-collapse w-100 d-block py-3 pl-4 imee-text-grey-blue font-weight-bold imee-light-grey" data-toggle="collapse" href="#section04title" role="" aria-expanded="false" aria-controls="collapse">
+                          <i class="fas fa-plus"></i> {{program.section04title}}
+                        </a>
+                        <div class="collapse" id="section04title">
+                          <div class=" w-100 pl-4 mt-3 text-justify">
+                            {{{program.section04text}}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{/if}}
+
+                  {{#if program.section05title}}
+                    <div class="row mx-0 my-2 ">
+                      <div class="col-12 px-0 ">
+                        <a class="imee-collapse w-100 d-block py-3 pl-4 imee-text-grey-blue font-weight-bold imee-light-grey" data-toggle="collapse" href="#section05title" role="" aria-expanded="false" aria-controls="collapse">
+                          <i class="fas fa-plus"></i> {{program.section05title}}
+                        </a>
+                        <div class="collapse" id="section05title">
+                          <div class=" w-100 pl-4 mt-3 text-justify">
+                            {{{program.section05text}}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{/if}}
+
+                  {{#if program.section06title}}
+                    <div class="row mx-0 my-2 ">
+                      <div class="col-12 px-0 ">
+                        <a class="imee-collapse w-100 d-block py-3 pl-4 imee-text-grey-blue font-weight-bold imee-light-grey" data-toggle="collapse" href="#section06title" role="" aria-expanded="false" aria-controls="collapse">
+                          <i class="fas fa-plus"></i> {{program.section06title}}
+                        </a>
+                        <div class="collapse" id="section06title">
+                          <div class=" w-100 pl-4 mt-3 text-justify">
+                            {{{program.section06text}}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{/if}}
+
+
+                {{/ifCond}}
+
+
+                {{#ifCond program.section_indicator '==' '1'}}
+                  {{{program.text}}}
+                {{/ifCond}}
               </div>
 
 
@@ -35,40 +133,40 @@
           </div>
 
           <!-- Right Column  -->
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2 imee-light-grey rounder">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 p-2 rounder">
             <div class="row mx-0 imee-text-grey-blue">
               <div class="col-12 p-2 my-1 border-bottom">
                 <span class="imee-prog-title">Πληροφορίες</span>
                 <!-- <h3 class="py-0 m-0 imee-section-header imee-text-grey-blue">Πληροφορίες</h3> -->
               </div>
               {{#if program.start_date}}
-                <div class="col-12 p-2 my-1 border-bottom">
+                <div class="col-12 p-2 my-1">
                   <span class="font-weight-bold float-left">Έναρξη</span>
                   <span class="font-weight-normal float-right imee-text-red">{{dateFormat program.start_date}}</span>
                 </div>
               {{/if}}
               {{#if program.end_date}}
-                <div class="col-12 p-2 my-1 border-bottom">
+                <div class="col-12 p-2 my-1 ">
                   <span class="font-weight-bold float-left">Λήξη</span>
                   <span class="font-weight-normal float-right imee-text-red">{{dateFormat program.end_date}}</span>
                 </div>
               {{/if}}
               {{#if program.hours}}
-                <div class="col-12 p-2 my-1 border-bottom">
+                <div class="col-12 p-2 my-1 ">
                   <span class="font-weight-bold float-left">Ώρες</span>
                   <span class="font-weight-normal float-right imee-text-red">{{program.hours}}</span>
                 </div>
               {{/if}}
               {{#if program.cost}}
-              {{#ifCond program.cost "!=" "0" }}
-                <div class="col-12 p-2 my-1 border-bottom">
-                  <span class="font-weight-bold float-left">Κόστος</span>
-                  <span class="font-weight-normal float-right imee-text-red">{{program.cost}} &euro;</span>
-                </div>
+                {{#ifCond program.cost "!=" "0" }}
+                  <div class="col-12 p-2 my-1">
+                    <span class="font-weight-bold float-left">Κόστος</span>
+                    <span class="font-weight-normal float-right imee-text-red">{{program.cost}} &euro;</span>
+                  </div>
                 {{/ifCond}}
               {{/if}}
               {{#if program.location}}
-                <div class="col-12 p-2 my-1 border-bottom">
+                <div class="col-12 p-2 my-1 ">
                   <span class="font-weight-bold float-left">Τοποθεσία</span>
                   <span class="font-weight-normal float-right imee-text-red">{{program.location}}</span>
                 </div>
@@ -87,7 +185,7 @@
 
 
 
-        <div class="row mx-0 border-top px-2 ">
+        <div class="row mx-0 px-2 ">
           <!-- Gallery -->
           {{#if program.gallery}}
             <div class="col-12 py-3">

@@ -210,7 +210,7 @@ router.get('/programs/:id', function(req, res, next) {
       item.gallery = JSON.parse(item.gallery);
     })
     program = result[0];
-
+    console.log(program);
     res.render('program', {
       title: 'Προγράμματα',
       program: program,

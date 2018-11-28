@@ -343,3 +343,21 @@ p
 
 .imee-foreas-category:last-child
   border: none !important
+
+
+.imee-collapse
+  text-decoration: none
+  clear: both
+  &:hover
+    text-decoration: none
+    > i
+      color: $red
+      // content: 'f055'
+
+
+
+a[aria-expanded="true"]
+  background: $grey-blue !important
+  color: white !important
+  >.fa-plus::before
+      content: "\f068"
